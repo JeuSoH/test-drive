@@ -1,0 +1,77 @@
+.title {
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 350px;
+}
+.discover {
+    font-size: 50px;
+    font-weight: bold;
+}
+.new {
+    text-align: center;
+}
+.welcome_blocks {
+    display: flex;
+    margin-left: 250px;
+}
+.block_1 {
+    width: 300px;
+    height: 700px;
+    background-color: #cf9032;
+    margin-top: 100px;
+    border-radius: 35px 35px 0 0;
+}
+.block_2 {
+    width: 300px;
+    height: 600px;
+    background-color: #23217d;
+    margin-top: 200px;
+    margin-left: 80px;
+    border-radius: 35px 35px 0 0;
+}
+.number {
+    font-family: "Anton", sans-serif;
+    color: white;
+    text-align: center;
+    font-size: 70px;
+    margin-top: 0;
+}
+.shoes_1 {
+    position: absolute;
+    top: 280px;
+    left: 520px;
+}
+.shoes_2 {
+    position: absolute;
+    top: 260px;
+    right: 660px;
+}
+.name_shoes_1 {
+    padding-top: 330px;
+    color: white;
+    font-family: "Anton", sans-serif;
+    text-align: center;
+}
+.name_shoes_2 {
+    padding-top: 280px;
+    color: white;
+    font-family: "Anton", sans-serif;
+    text-align: center;
+}
+.social {
+    display: flex;
+    align-items: flex-end;
+    font-size: 20px;
+    font-weight: bold;
+    width: 50px;
+}
+.brand {
+    display: flex;
+    flex-wrap: wrap;
+    width: 85px;
+    align-content: center;
+    margin: 0 auto;
+}
+.icon {
+    margin-left: 25px;
+}
