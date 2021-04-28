@@ -1,9 +1,10 @@
-import React from 'react';
+import React from "react";
+import Welcome from "../Welcome/Welcome";
 
 const Home = () => {
     return (
-        <div>
-            <h1>Сайт работает, это тест</h1>
+        <div className="container">
+            <Welcome />
         </div>
     );
 };
