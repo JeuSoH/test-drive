@@ -8,21 +8,26 @@ import SignIn from './components/SignIn/SignIn';
 import SignUp from "./components/SignUp/SignUp";
 import AuthContextProvider from "./contexts/AuthContext";
 import ShoesContextProvider from "./contexts/shoesContext";
+import Profile from "./components/Profile/Profile";
+import UsersContextProvider from "./contexts/UsersContext";
 
 const Routes = () => {
     return (
         <ShoesContextProvider>
             <AuthContextProvider>
-                <BrowserRouter>
-                    <Header />
-                    <Switch>
-                        <Route exact path="/add" component={AddShoes} />
-                        <Route exact path="/" component={Home} />
-                        <Route exact path="/card" component={Card} />
-                        <Route exact path="/login" component={SignIn} />
-                        <Route exact path="/register" component={SignUp} />
-                    </Switch>
-                </BrowserRouter>
+                <UsersContextProvider>
+                    <BrowserRouter>
+                        <Header />
+                        <Switch>
+                            <Route exact path="/add" component={AddShoes} />
+                            <Route exact path="/" component={Home} />
+                            <Route exact path="/card" component={Card} />
+                            <Route exact path="/login" component={SignIn} />
+                            <Route exact path="/register" component={SignUp} />
+                            <Route exact path="/profile" component={Profile} />
+                        </Switch>
+                    </BrowserRouter>
+                </UsersContextProvider>
             </AuthContextProvider>
         </ShoesContextProvider>
     );
