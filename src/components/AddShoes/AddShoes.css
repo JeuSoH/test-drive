@@ -1,0 +1,23 @@
+.inputs {
+    padding-top: 40px;
+    border: 3px solid black;
+    padding-bottom: 40px;
+}
+
+.inps_block {
+    display: flex;
+    margin-bottom: 30px;
+    margin-left: 50px;
+}
+.inp-add {
+    margin-right: 30px;
+    width: 250px;
+    height: 50px;
+}
+.btn-inps {
+    text-align: center;
+}
+.btn-add {
+    background-color: darkgray;
+    color: black;
+}

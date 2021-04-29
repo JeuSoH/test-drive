@@ -1,0 +1,14 @@
+.card_img {
+    width: 350px;
+    height: 400px;
+    background: linear-gradient(
+        180deg,
+        #877373 0%,
+        rgba(112, 93, 93, 0.859375) 13.5%,
+        rgba(188, 161, 161, 0) 96%
+    );
+    margin-right: 20px;
+}
+.card {
+    margin-top: 50px;
+}

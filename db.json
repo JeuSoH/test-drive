@@ -1,3 +1,40 @@
 {
-    "shoes": []
+  "shoes": [
+    {
+      "brand": "Nike",
+      "model": "Air Jordan",
+      "sex": "men",
+      "category": "Football",
+      "description": "",
+      "size": "42",
+      "color": "Color",
+      "price": "5000",
+      "images": "",
+      "id": 1
+    },
+    {
+      "brand": "Adidas",
+      "model": "asfsa",
+      "sex": "Women",
+      "category": "Football",
+      "description": "afas",
+      "size": "5112",
+      "color": "safsa",
+      "price": "0515",
+      "images": "fasf",
+      "id": 2
+    },
+    {
+      "brand": "",
+      "model": "fsafsa",
+      "sex": "Women",
+      "category": "",
+      "description": "fasfafs",
+      "size": "51",
+      "color": "fsafsa",
+      "price": "565156",
+      "images": "safa",
+      "id": 3
+    }
+  ]
 }

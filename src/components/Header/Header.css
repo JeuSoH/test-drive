@@ -31,3 +31,10 @@
 .men {
     margin-right: 75px;
 }
+.add {
+    margin-left: 25px;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
