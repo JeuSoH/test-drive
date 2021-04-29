@@ -1,4 +1,31 @@
 {
+  "users": [
+    {
+      "firstName": "Conor",
+      "lastName": "McGregor",
+      "address": "Bishkek, Kyrgyzstan, Aitmatov str. 132",
+      "orders": [
+        {
+          "id": "1",
+          "orderData": "12/12/2021",
+          "total": "3200 сом",
+          "status": "Выполнено"
+        },
+        {
+          "id": "2",
+          "orderData": "12/12/2021",
+          "total": "3200 сом",
+          "status": "Обработка"
+        },
+        {
+          "id": "3",
+          "orderData": "12/12/2021",
+          "total": "3200 сом",
+          "status": "Обработка"
+        }
+      ]
+    }
+  ],
   "shoes": [
     {
       "brand": "Nike",
