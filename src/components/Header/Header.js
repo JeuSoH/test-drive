@@ -3,6 +3,7 @@ import "./Header.css";
 import Search from "../../assets/img/search.svg";
 import Menu from "../../assets/img/menu.svg";
 import Cart from "../../assets/img/cart.svg";
+import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
@@ -11,7 +12,9 @@ const Header = () => {
                 <div className="container">
                     <div className="navbar">
                         <div className="navbar_logo">
-                            <p className="logo">Streethead</p>
+                            <p className="logo">
+                                <Link to="/">Streethead</Link>
+                            </p>
                         </div>
                         <div className="navbar_left">
                             <p className="men">Men</p>
@@ -26,6 +29,13 @@ const Header = () => {
                                 <div className="menu">
                                     <p>Menu</p>
                                     <img src={Menu} alt="" />
+                                </div>
+
+                                <div className="add">
+                                    <p>
+                                        {" "}
+                                        <Link to="/add">Добавить</Link>
+                                    </p>
                                 </div>
                             </div>
                         </div>
