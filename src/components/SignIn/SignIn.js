@@ -30,13 +30,13 @@ const SignIn = () => {
                     </div>
 
                     <form onSubmit={(event) => loginUser(event, userData, history)}>
-                        <input onChange={handleInputChanges} type="text" id="login" className="fadeIn second" name="email" placeholder="email" />
-                        <input onChange={handleInputChanges} type="text" id="password" className="fadeIn third" name="password" placeholder="password" />
+                        <input onChange={handleInputChanges} type="text" id="login" className="sign-in-up-input fadeIn second" name="email" placeholder="email" />
+                        <input onChange={handleInputChanges} type="text" id="password" className="sign-in-up-input fadeIn third" name="password" placeholder="password" />
                         <input type="submit" className="fadeIn fourth" value="Log In" />
                     </form>
 
                     <div id="formFooter">
-                        <a className="underlineHover" href="#">Forgot Password?</a>
+                        <a className="underlineHover sign-in-up-subtext" href="#">Forgot Password?</a>
                     </div>
 
                 </div>

@@ -31,9 +31,9 @@ const SignUp = () => {
                     </div>
 
                     <form onSubmit={(event) => registerUser(event, newUser, history)}>
-                        <input onChange={handleInputChanges} type="text" id="name" className="fadeIn second" name="name" placeholder="name" />
-                        <input onChange={handleInputChanges} type="text" id="email" className="fadeIn second" name="email" placeholder="email" />
-                        <input onChange={handleInputChanges} type="text" id="password" className="fadeIn third" name="password" placeholder="password" />
+                        <input onChange={handleInputChanges} type="text" id="name" className="sign-in-up-input fadeIn second" name="name" placeholder="name" />
+                        <input onChange={handleInputChanges} type="text" id="email" className="sign-in-up-input fadeIn second" name="email" placeholder="email" />
+                        <input onChange={handleInputChanges} type="text" id="password" className="sign-in-up-input fadeIn third" name="password" placeholder="password" />
                         <input type="submit" className="fadeIn fourth" value="Register" />
                     </form>
 
