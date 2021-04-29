@@ -1,33 +1,35 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Montserrat&display=swap");
 * {
-    font-family: "Montserrat", sans-serif;
-    font-size: 30px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  margin-right: 0;
+  margin-left: 0;
 }
 .container {
-    width: 1200px;
-    margin: 0 auto;
+  width: 1200px;
+  margin: 0 auto;
 }
 .navbar {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 .navbar_left {
-    display: flex;
+  display: flex;
 }
 .navbar_right {
-    display: flex;
+  display: flex;
 }
 .cart {
-    display: flex;
-    margin-left: 75px;
+  display: flex;
+  margin-left: 75px;
 }
 .menu {
-    display: flex;
-    margin-left: 35px;
+  display: flex;
+  margin-left: 35px;
 }
 .logo {
-    font-weight: bold;
+  font-weight: bold;
 }
 .men {
-    margin-right: 75px;
+  margin-right: 75px;
 }
