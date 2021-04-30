@@ -2,6 +2,8 @@
 * {
     font-family: "Montserrat", sans-serif;
     font-size: 30px;
+    margin-right: 0;
+    margin-left: 0;
 }
 .container {
     width: 1200px;
@@ -37,4 +39,24 @@
 a {
     text-decoration: none;
     color: black;
+}
+.sign_btn {
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    border-style: none;
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 160px;
+    height: 50px;
+}
+.log_btn {
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    border-style: none;
+    margin-top: 20px;
+    margin-left: 10px;
+    width: 160px;
+    height: 50px;
 }

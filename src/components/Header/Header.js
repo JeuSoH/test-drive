@@ -16,26 +16,30 @@ const Header = () => {
                                 <Link to="/">Streethead</Link>
                             </p>
                         </div>
-                        <div className="navbar_left">
-                            <p className="men">Men</p>
-                            <p className="women">Women</p>
-                        </div>
+
                         <div className="navbar_right">
                             <img className="icon" src={Search} alt="" />
                             <div className="cart">
                                 <p>Cart</p>
 
                                 <img src={Cart} alt="" />
-                                <div className="menu">
+                                {/* <div className="menu">
                                     <p>Menu</p>
                                     <img src={Menu} alt="" />
-                                </div>
-
+                                </div> */}
                                 <div className="add">
                                     <p>
                                         {" "}
                                         <Link to="/add">Добавить</Link>
                                     </p>
+                                </div>
+                                <div className="sign_btn_block">
+                                    <button className="sign_btn">
+                                        Sign In
+                                    </button>
+                                </div>
+                                <div className="log_btn_block">
+                                    <button className="log_btn">Log Out</button>
                                 </div>
                             </div>
                         </div>
