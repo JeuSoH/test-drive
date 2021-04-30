@@ -7,7 +7,10 @@ export const shoesContext = React.createContext();
 const INIT_STATE = {
     shoesData: [],
     shoeDetails: {},
-    cart: JSON.parse(localStorage.getItem('streetHeadShoes'))
+    cart: {
+        shoes: [],
+        totalPrice: 0,
+    }
 };
 
 const reducer = (state = INIT_STATE, action) => {
@@ -52,11 +55,13 @@ const ShoesContextProvider = ({ children }) => {
     }
 
     function addToCart(item) {
+        item.count = 1;
+        item.subPrice = item.price
         let cart = JSON.parse(localStorage.getItem("streetHeadShoes"));
         if (!cart) {
             cart = {
                 shoes: [],
-                totalPrice: 0
+                totalPrice: 0,
             };
         }
         let isAddedToCart = cart.shoes.filter(elem => elem.id === item.id);
@@ -72,7 +77,7 @@ const ShoesContextProvider = ({ children }) => {
     }
 
     function getCart() {
-        const cart = JSON.parse(localStorage.getItem("streetHeadShoes"));
+        let cart = JSON.parse(localStorage.getItem("streetHeadShoes"));
         if (!cart) {
             cart = {
                 shoes: [],
@@ -99,6 +104,29 @@ const ShoesContextProvider = ({ children }) => {
         return isInCart.length > 0 ? true : false;
     }
 
+    function changeCount(count, id) {
+        if (count < 1) return;
+        let cart = JSON.parse(localStorage.getItem("streetHeadShoes"));
+        cart.shoes = cart.shoes.map(elem => {
+            if (elem.id == id) {
+                elem.count = count;
+                elem.subPrice = elem.price * count;
+            }
+            return elem;
+        });
+        cart.totalPrice = countPrice(cart.shoes);
+        localStorage.setItem("streetHeadShoes", JSON.stringify(cart));
+        getCart();
+    }
+
+    function deleteFromCart(id) {
+        let cart = JSON.parse(localStorage.getItem("streetHeadShoes"));
+        cart.shoes = cart.shoes.filter(elem => elem.id != id);
+        cart.totalPrice = countPrice(cart.shoes);
+        localStorage.setItem("streetHeadShoes", JSON.stringify(cart));
+        getCart();
+    }
+
     const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
     return (
@@ -114,7 +142,9 @@ const ShoesContextProvider = ({ children }) => {
                 getShoeDetails,
                 saveShoe,
                 addToCart,
-                checkShoeInCart
+                checkShoeInCart,
+                changeCount,
+                deleteFromCart
             }}
         >
             {children}

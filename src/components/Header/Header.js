@@ -27,7 +27,7 @@ const Header = () => {
                             >
                                 <img src={Cart} alt="" />
                             </div>
-                            <div>
+                            <div className="navbar__add-btn">
                                 <p>
                                     <Link to="/add">Добавить</Link>
                                 </p>
