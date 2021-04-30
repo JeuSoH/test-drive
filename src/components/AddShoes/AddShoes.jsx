@@ -14,6 +14,10 @@ const AddShoes = () => {
         color: "",
         price: "",
         images: "",
+        oneImg: "",
+        twoImg: "",
+        threeImg: "",
+        fourImg: "",
     });
 
     const { postNewShoe } = useContext(shoesContext);
@@ -38,6 +42,10 @@ const AddShoes = () => {
             color: "",
             price: "",
             images: "",
+            oneImg: "",
+            twoImg: "",
+            threeImg: "",
+            fourImg: "",
         });
     };
     return (
@@ -130,6 +138,40 @@ const AddShoes = () => {
                     />
                     <input
                         className="inp-add"
+                        value={shoe.oneImg}
+                        name="oneImg"
+                        onChange={handleValue}
+                        type="text"
+                        placeholder="Изображение"
+                    />
+                    <input
+                        className="inp-add"
+                        value={shoe.twoImg}
+                        name="twoImg"
+                        onChange={handleValue}
+                        type="text"
+                        placeholder="Изображение"
+                    />
+                </div>
+                <div className="inps_block">
+                    <input
+                        className="inp-add"
+                        value={shoe.threeImg}
+                        name="threeImg"
+                        onChange={handleValue}
+                        type="text"
+                        placeholder="Изображение"
+                    />
+                    <input
+                        className="inp-add"
+                        value={shoe.fourImg}
+                        name="fourImg"
+                        onChange={handleValue}
+                        type="text"
+                        placeholder="Изображение"
+                    />
+                    <input
+                        className="inp-add"
                         value={shoe.description}
                         name="description"
                         onChange={handleValue}
@@ -137,6 +179,7 @@ const AddShoes = () => {
                         placeholder="Описание"
                     />
                 </div>
+
                 <div className="btn-inps">
                     <button className="btn-add" onClick={handleClick}>
                         Добавить

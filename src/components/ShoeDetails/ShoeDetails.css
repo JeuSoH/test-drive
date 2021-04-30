@@ -1,8 +1,148 @@
 .details_card {
     border: 1px solid black;
     width: 100%;
+    margin-top: 70px;
 }
 .det_nav {
     display: flex;
     justify-content: space-between;
+    margin-top: 25px;
+}
+.icon_det {
+    width: 25px;
+    height: 25px;
+}
+.back_det {
+    width: 100px;
+    height: 40px;
+    font-size: 18px;
+    border: 3px solid black;
+    background-color: white;
+    font-weight: bold;
+}
+.back_det:hover {
+    background-color: black;
+    color: white;
+}
+.share {
+    width: 37px;
+    height: 37px;
+    border: 1px solid black;
+    border-radius: 25px;
+    text-align: center;
+}
+.share:hover {
+    background-color: #b93935;
+}
+.back_det a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+}
+.back_det:hover a {
+    color: white;
+}
+.det_title {
+    display: flex;
+}
+.det_brand {
+    font-weight: bold;
+    font-size: 38px;
+}
+.det_details {
+    display: flex;
+    height: 40px;
+}
+.det_details img {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+}
+.icon_star {
+    margin-left: 20px;
+}
+.det_details p {
+    margin-top: 10px;
+    color: #8b8b8b;
+    font-size: 16px;
+}
+.det_welcome {
+    display: flex;
+    margin-top: 100px;
+}
+.det_images {
+    display: flex;
+    flex-wrap: wrap;
+    width: 200px;
+}
+.det_img {
+    width: 200px; /* Ширина */
+    float: left; /* Выстраиваем элементы по горизонтали */
+    margin: 0 0 0 3.5%; /* Отступ слева */
+    background: #f0f0f0; /* Цвет фона */
+    border-radius: 5px; /* Радиус скругления */
+    padding: 2%; /* Поля */
+}
+.det_img:hover {
+    border: 2px solid black;
+}
+.image_img {
+    margin-left: 50px;
+    width: 500px;
+    border: 1px solid black;
+}
+.image_img:hover {
+    border: 3px solid black;
+}
+.det_inf {
+    margin-left: 100px;
+}
+.det_price {
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 0;
+}
+.det_size {
+    font-size: 18px;
+    border-bottom: 1px dashed #8b8b8b;
+}
+.btn_inf {
+    background-color: black;
+    color: white;
+    height: 60px;
+    border-style: none;
+    border-radius: 20px;
+    margin-top: 30px;
+}
+.inf_brand {
+    margin-top: 25px;
+}
+.inf_dost {
+    font-size: 18px;
+    color: #666262;
+}
+.inf_desc {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+.cloth_icon {
+    width: 25px;
+    margin-left: 25px;
+}
+.cloth_desc {
+    font-size: 16px;
+}
+.inf_block {
+    width: 100px;
+}
+.det_description {
+    margin-top: 100px;
+    width: 600px;
+}
+.content_desc {
+    font-size: 20px;
+}
+.edit_icon {
+    width: 50px;
 }
