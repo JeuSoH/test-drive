@@ -41,7 +41,7 @@
 }
 .cart__element span::after {
   content: "|";
-  margin-right: 5px;
+  margin-left: 5px;
 }
 
 .cart__total-price {
