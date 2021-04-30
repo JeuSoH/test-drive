@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Header.css";
+import { authContext } from '../../contexts/AuthContext';
 import Search from "../../assets/img/search.svg";
-import Menu from "../../assets/img/menu.svg";
 import Cart from "../../assets/img/cart.svg";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const Header = () => {
+
+    const { currentUser, logoutUser } = useContext(authContext)
+    const history = useHistory();
+
     return (
         <div>
             <div className="header">
@@ -16,28 +20,29 @@ const Header = () => {
                                 <Link to="/">Streethead</Link>
                             </p>
                         </div>
-                        <div className="navbar_left">
-                            <p className="men">Men</p>
-                            <p className="women">Women</p>
-                        </div>
                         <div className="navbar_right">
                             <img className="icon" src={Search} alt="" />
                             <div className="cart">
-                                <p>Cart</p>
-
                                 <img src={Cart} alt="" />
-                                <div className="menu">
-                                    <p>Menu</p>
-                                    <img src={Menu} alt="" />
-                                </div>
-
-                                <div className="add">
-                                    <p>
-                                        {" "}
-                                        <Link to="/add">Добавить</Link>
-                                    </p>
-                                </div>
                             </div>
+                            {
+                                currentUser ?
+                                    (
+                                        <div className="log-in-out-container">
+                                            <p className="log-in-out" onClick={logoutUser}>
+                                                ВЫЙТИ
+                                                </p>
+                                        </div>
+                                    )
+                                    :
+                                    (
+                                        <div className="log-in-out-container" onClick={() => history.push("/login")} className="add">
+                                            <p className="log-in-out">
+                                                ВОЙТИ
+                                                </p>
+                                        </div>
+                                    )
+                            }
                         </div>
                     </div>
                 </div>

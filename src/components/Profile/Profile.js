@@ -8,7 +8,7 @@ const Profile = () => {
 
     useEffect(() => {
         getUserOrders();
-    }, [])
+    }, []);
 
     return (
         <div className="profile">
