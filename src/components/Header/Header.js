@@ -22,24 +22,24 @@ const Header = () => {
                         </div>
                         <div className="navbar_right">
                             <img className="icon" src={Search} alt="" />
-                            <div className="cart">
+                            <div onClick={() => history.push("/cart")} className="cart">
                                 <img src={Cart} alt="" />
                             </div>
                             {
                                 currentUser ?
                                     (
-                                        <div className="log-in-out-container">
-                                            <p className="log-in-out" onClick={logoutUser}>
+                                        <div className="log-in-out-container" onClick={logoutUser}>
+                                            <p className="log-in-out">
                                                 ВЫЙТИ
-                                                </p>
+                                            </p>
                                         </div>
                                     )
                                     :
                                     (
-                                        <div className="log-in-out-container" onClick={() => history.push("/login")} className="add">
+                                        <div className="log-in-out-container" onClick={() => history.push("/login")}>
                                             <p className="log-in-out">
                                                 ВОЙТИ
-                                                </p>
+                                            </p>
                                         </div>
                                     )
                             }

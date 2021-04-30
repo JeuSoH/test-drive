@@ -28,16 +28,28 @@
   ],
   "shoes": [
     {
-      "brand": "",
+      "brand": "Jordan",
       "model": "Jordan 6",
-      "sex": "",
+      "sex": "men",
       "category": "Basketball",
       "description": "ascsd",
       "size": "42",
-      "color": "dscfs",
+      "color": "синий",
       "price": "5000",
       "images": "https://cdn.webshopapp.com/shops/292955/files/361882319/air-jordan-1-mid-gym-red-black-white-gs.jpg",
       "id": 1
+    },
+    {
+      "brand": "Adidas",
+      "model": "Gazelle",
+      "sex": "men",
+      "category": "Unknown",
+      "description": "ASDFGH",
+      "size": "42",
+      "color": "Белый",
+      "price": "7800",
+      "images": "https://cdn.webshopapp.com/shops/292955/files/361882319/air-jordan-1-mid-gym-red-black-white-gs.jpg",
+      "id": 2
     }
   ]
 }
