@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import AddShoes from "./components/AddShoes/AddShoes";
 import Header from "./components/Header/Header";
 import Card from './components/Card/Card';
@@ -10,6 +10,7 @@ import AuthContextProvider from "./contexts/AuthContext";
 import ShoesContextProvider from "./contexts/shoesContext";
 import Profile from "./components/Profile/Profile";
 import UsersContextProvider from "./contexts/UsersContext";
+import Cart from "./components/Cart/Cart";
 
 const Routes = () => {
     return (
@@ -25,6 +26,8 @@ const Routes = () => {
                             <Route exact path="/login" component={SignIn} />
                             <Route exact path="/register" component={SignUp} />
                             <Route exact path="/profile" component={Profile} />
+                            <Route exact path="/cart" component={Cart} />
+                            <Redirect to="/" />
                         </Switch>
                     </BrowserRouter>
                 </UsersContextProvider>
