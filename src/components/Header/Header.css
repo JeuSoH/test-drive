@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Montserrat&display=swap");
 * {
-  font-family: "Montserrat", sans-serif;
-  font-size: 30px;
-  margin-right: 0;
-  margin-left: 0;
+    font-family: "Montserrat", sans-serif;
+    font-size: 30px;
+    margin-right: 0;
+    margin-left: 0;
 }
 .container {
-  width: 1200px;
-  margin: 0 auto;
+    width: 1200px;
+    margin: 0 auto;
 }
 .navbar {
   display: flex;
@@ -15,14 +15,14 @@
   height: 10vh;
 }
 .navbar_right {
-  display: flex;
+    display: flex;
 }
 .cart {
-  display: flex;
-  margin-left: 75px;
+    display: flex;
+    margin-left: 75px;
 }
 .logo {
-  font-weight: bold;
+    font-weight: bold;
 }
 .log-in-out-container {
   cursor: pointer;
@@ -43,4 +43,24 @@
 a {
   text-decoration: none;
   color: black;
+}
+.sign_btn {
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    border-style: none;
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 160px;
+    height: 50px;
+}
+.log_btn {
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    border-style: none;
+    margin-top: 20px;
+    margin-left: 10px;
+    width: 160px;
+    height: 50px;
 }

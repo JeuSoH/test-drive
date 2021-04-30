@@ -51,9 +51,9 @@ const AddShoes = () => {
                         onChange={handleValue}
                     >
                         <optgroup label="Brand">
-                            <option value="nike">Nike</option>
-                            <option>Adidas</option>
-                            <option>Puma</option>
+                            <option value="Nike">Nike</option>
+                            <option value="Adidas">Adidas</option>
+                            <option value="Puma">Puma</option>
                         </optgroup>
                     </select>
 
@@ -74,8 +74,8 @@ const AddShoes = () => {
                         onChange={handleValue}
                     >
                         <optgroup label="Пол">
-                            <option>Men</option>
-                            <option>Women</option>
+                            <option value="Men">Men</option>
+                            <option value="Women">Women</option>
                         </optgroup>
                     </select>
                     <select
@@ -85,7 +85,7 @@ const AddShoes = () => {
                         onChange={handleValue}
                     >
                         <optgroup label="Category">
-                            <option>Running</option>
+                            <option value="Running">Running</option>
                             <option>Football</option>
                             <option>Basketball</option>
                             <option>Jordan</option>
