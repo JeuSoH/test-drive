@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import Basket from "../../assets/img/basket.png";
 
 const ShoeCard = ({ item }) => {
-    const { deleteShoe } = useContext(shoesContext);
+    const { deleteShoe, addToCart, checkShoeInCart } = useContext(shoesContext);
 
     return (
         <div className="card_blocks">
@@ -17,7 +17,7 @@ const ShoeCard = ({ item }) => {
                     <div className="card_desc_brand">
                         <p className="card_brand">{item.brand}</p>
                         <p className="card_model">{item.model}</p>
-                        <img className="icon_card" src={Basket} />
+                        <img style={{ backgroundColor: checkShoeInCart(item.id) ? "gray" : "white" }} onClick={() => addToCart(item)} className="icon_card" src={Basket} />
                         <img
                             onClick={() => deleteShoe(item.id)}
                             className="icon_card"
