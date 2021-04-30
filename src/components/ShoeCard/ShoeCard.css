@@ -27,9 +27,9 @@
   justify-content: space-between;
 }
 .card_brand {
-  margin-right: -40px;
-  font-weight: bold;
-  margin-top: 0;
+    margin-right: 0px;
+    font-weight: bold;
+    margin-top: 0;
 }
 .card_model {
   margin-top: 0;
