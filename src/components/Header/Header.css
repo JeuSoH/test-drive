@@ -10,11 +10,9 @@
     margin: 0 auto;
 }
 .navbar {
-    display: flex;
-    justify-content: space-between;
-}
-.navbar_left {
-    display: flex;
+  display: flex;
+  justify-content: space-between;
+  height: 10vh;
 }
 .navbar_right {
     display: flex;
@@ -23,22 +21,28 @@
     display: flex;
     margin-left: 75px;
 }
-.menu {
-    display: flex;
-    margin-left: 35px;
-}
 .logo {
     font-weight: bold;
 }
-.men {
-    margin-right: 75px;
+.log-in-out-container {
+  cursor: pointer;
+  margin-left: 25px;
+  display: flex;
+  align-items: center;
+  background-color: black;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  color: white;
+  border-radius: 100px;
 }
-.add {
-    margin-left: 25px;
+
+.log-in-out {
+  font-size: 20px;
+  margin: auto 20px;
 }
 a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 .sign_btn {
     background-color: black;
