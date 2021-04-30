@@ -2,3 +2,7 @@
     border: 1px solid black;
     width: 100%;
 }
+.det_nav {
+    display: flex;
+    justify-content: space-between;
+}
