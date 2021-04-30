@@ -21,7 +21,7 @@ const Header = () => {
                         </div>
                         <div className="navbar_right">
                             <img className="icon" src={Search} alt="" />
-                            <div className="cart">
+                            <div onClick={() => history.push("/cart")} className="cart">
                                 <img src={Cart} alt="" />
                             </div>
                             <div>

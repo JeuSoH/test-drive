@@ -29,18 +29,6 @@
   "shoes": [
     {
       "brand": "Nike",
-      "model": "Jordan 6",
-      "sex": "Men",
-      "category": "Basketball",
-      "description": "salam akeikum",
-      "size": "42",
-      "color": "black",
-      "price": "5000",
-      "images": "https://cdn.webshopapp.com/shops/292955/files/361882319/air-jordan-1-mid-gym-red-black-white-gs.jpg",
-      "id": 1
-    },
-    {
-      "brand": "Nike",
       "model": "Air Jordan 5",
       "sex": "Men",
       "category": "Jordan",
