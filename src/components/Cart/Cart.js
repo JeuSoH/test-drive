@@ -1,10 +1,10 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './Cart.css'
 import { shoesContext } from '../../contexts/shoesContext';
 
 const Cart = () => {
 
-    const { cart, getCart } = useContext(shoesContext);
+    const { cart, getCart, changeCount, deleteFromCart } = useContext(shoesContext);
 
     useEffect(() => {
         getCart();
@@ -24,7 +24,9 @@ const Cart = () => {
                                     <span>Модель: {elem.model}</span>
                                     <span>Цвет: {elem.color}</span>
                                     <span>Размер: {elem.size}</span>
+                                    <input onChange={(event) => changeCount(event.target.value, elem.id)} className="cart__shoes-count" value={elem.count} type="number" />
                                     <span>Цена: {elem.price}</span>
+                                    <span onClick={() => deleteFromCart(elem.id)} className="cart__delete-btn">Удалить</span>
                                 </div>
                             ))
                         )
@@ -34,6 +36,11 @@ const Cart = () => {
                         )
                 }
                 <span className="cart__total-price">Общая сумма: {cart.totalPrice} сом</span>
+
+                {cart.shoes.length > 0 ?
+                    (
+                        <button className="cart__order-btn">Оформить заказ</button>
+                    ) : ""}
             </div>
         </div>
     )

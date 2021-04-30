@@ -3,6 +3,6 @@ export const DB_JSON = "http://localhost:8000/users/";
 
 export function countPrice(array) {
     return array.reduce((sum, elem) => {
-        return sum + parseInt(elem.price)
+        return sum + parseInt(elem.subPrice)
     }, 0)
 }
