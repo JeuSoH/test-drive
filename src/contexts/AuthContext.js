@@ -13,10 +13,8 @@ const INIT_STATE = {
 
 const reducer = (state = INIT_STATE, action) => {
     switch (action.type) {
-        case "GET_AUTH_INFO":
+        case ".":
             return {
-                ...state,
-                isAuth: action.payload
             }
         default:
             return state
@@ -26,13 +24,12 @@ const reducer = (state = INIT_STATE, action) => {
 const AuthContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, INIT_STATE);
     const [currentUser, setCurrentUser] = useState(null);
-    const [pending, setPending] = useState(true);
     const cookies = new Cookies();
 
     useEffect(() => {
         app.auth().onAuthStateChanged((user) => {
             setCurrentUser(user)
-            setPending(false)
+            console.log(user);
         });
     }, []);
 
@@ -51,21 +48,32 @@ const AuthContextProvider = ({ children }) => {
     async function loginUser(event, userData, history) {
         event.preventDefault();
         try {
-            await app
+            const newUser = await app
                 .auth()
                 .signInWithEmailAndPassword(userData.email, userData.password);
+            setCurrentUser(newUser.user)
+            console.log(currentUser);
             history.push('/')
         } catch (err) {
             console.log(err);
         }
     }
 
+    const logoutUser = async () => {
+        try {
+            await app.auth().signOut();
+            console.log('User Logged Out!');
+        } catch (err) {
+            console.log('err:', err);
+        }
+    }
+
     return (
         <authContext.Provider value={{
-            isAuth: state.isAuth,
             currentUser,
             registerUser,
-            loginUser
+            loginUser,
+            logoutUser
         }}>
             {children}
         </authContext.Provider>

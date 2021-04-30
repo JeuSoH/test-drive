@@ -6,7 +6,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { authContext } from '../../contexts/AuthContext';
 
 const SignIn = () => {
-    const { loginUser } = useContext(authContext);
+    const { currentUser, loginUser, logoutUser } = useContext(authContext);
     const history = useHistory();
 
     let userData = {}
@@ -38,7 +38,6 @@ const SignIn = () => {
                     <div id="formFooter">
                         <a className="underlineHover sign-in-up-subtext" href="#">Forgot Password?</a>
                     </div>
-
                 </div>
             </div>
         </div>
