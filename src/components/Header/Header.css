@@ -17,6 +17,13 @@
 .navbar_right {
   display: flex;
 }
+
+.navbar__add-btn {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  margin-left: 10px;
+}
 .cart {
   display: flex;
   margin-left: 75px;

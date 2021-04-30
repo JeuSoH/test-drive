@@ -41,9 +41,40 @@
 }
 .cart__element span::after {
   content: "|";
-  margin-right: 5px;
+  margin-left: 5px;
 }
 
 .cart__total-price {
   margin-top: 20px;
+}
+
+.cart__shoes-count {
+  width: 70px;
+  font-size: 20px;
+}
+
+.cart__delete-btn {
+  color: red;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.cart__delete-btn:hover {
+  color: rgb(14, 11, 11);
+}
+
+.cart__order-btn {
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  transition: 300ms;
+}
+
+.cart__order-btn:hover {
+  background-color: rgb(58, 54, 54);
 }

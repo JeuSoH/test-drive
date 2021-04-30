@@ -24,7 +24,7 @@ const Header = () => {
                             <div onClick={() => history.push("/cart")} className="cart">
                                 <img src={Cart} alt="" />
                             </div>
-                            <div>
+                            <div className="navbar__add-btn">
                                 <p>
                                     <Link to="/add">Добавить</Link>
                                 </p>
@@ -42,7 +42,6 @@ const Header = () => {
                                 <div
                                     className="log-in-out-container"
                                     onClick={() => history.push("/login")}
-                                    className="add"
                                 >
                                     <p className="log-in-out">ВОЙТИ</p>
                                 </div>
