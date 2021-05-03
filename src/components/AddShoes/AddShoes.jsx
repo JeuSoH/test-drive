@@ -47,6 +47,23 @@ const AddShoes = () => {
             threeImg: "",
             fourImg: "",
         });
+        if (
+            shoe.brand === "" ||
+            shoe.model === "" ||
+            shoe.sex === "" ||
+            shoe.category === "" ||
+            shoe.description === "" ||
+            shoe.size === "" ||
+            shoe.color === "" ||
+            shoe.price === "" ||
+            shoe.images === "" ||
+            shoe.oneImg === "" ||
+            shoe.twoImg === "" ||
+            shoe.threeImg === "" ||
+            shoe.fourImg === ""
+        ) {
+            alert("Заполните все поля");
+        }
     };
     return (
         <div className="inputs">
