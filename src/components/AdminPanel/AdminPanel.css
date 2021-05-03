@@ -1,0 +1,106 @@
+.admin-wrapper {
+  margin: 10vh auto;
+  width: 70%;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin__text {
+  text-align: center;
+}
+
+.admin-form {
+  width: 50%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-form__input {
+  margin-top: 5vh;
+  height: 50px;
+  font-size: 20px;
+}
+
+.admin-form__btn {
+  margin-top: 5vh;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  transition: 300ms;
+}
+
+.admin-form__btn:hover {
+  background-color: rgb(43, 40, 40);
+  color: white;
+}
+
+.admin-pannel__element {
+  border: 2px black solid;
+  margin: 5px;
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.admin-pannel__element img {
+  height: 70px;
+}
+
+.admin-pannel__element span {
+  font-size: 20px;
+  margin-left: 5px;
+}
+
+.admin-pannel__element span::before {
+  content: "|";
+  margin-right: 5px;
+}
+.admin-pannel__element span::after {
+  content: "|";
+  margin-left: 5px;
+}
+
+.admin-pannel__total-price {
+  margin-top: 20px;
+}
+
+.admin-pannel__shoes-count {
+  width: 70px;
+  font-size: 20px;
+}
+
+.admin-pannel__delete-btn {
+  color: red;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.admin-pannel__delete-btn:hover {
+  color: rgb(14, 11, 11);
+}
+
+.admin-pannel__order-btn {
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  transition: 300ms;
+}
+
+.admin-pannel__order-btn:hover {
+  background-color: rgb(58, 54, 54);
+}

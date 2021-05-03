@@ -27,11 +27,7 @@ const ShoeCard = ({ item }) => {
                             className="icon_card"
                             src={Basket}
                         />
-                        <img
-                            onClick={() => deleteShoe(item.id)}
-                            className="icon_card"
-                            src={Delete}
-                        />
+                        <img style={{ backgroundColor: checkShoeInCart(item.id) ? "gray" : "white" }} onClick={() => addToCart(item)} className="icon_card" src={Basket} />
                     </div>
                     <div className="block_price">
                         <p className="block_pr">{item.price} $</p>
