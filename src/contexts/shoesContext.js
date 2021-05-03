@@ -43,6 +43,11 @@ const ShoesContextProvider = ({ children }) => {
         axios.post(`${JSON_API}`, shoe);
     }
     async function getShoes(history) {
+        console.log(history);
+        const search = new URLSearchParams(history.location.search);
+        search.set("_limit", 6);
+        history.push(`${history.location.pathname}?${search.toString()}`);
+
         let res = await axios.get(`${JSON_API}${window.location.search}`);
         dispatch({
             type: "GET_SHOES",

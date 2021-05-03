@@ -14,6 +14,7 @@ const Header = () => {
     const { searchValue, setSearchValue } = useState("");
 
     const handleValue = (e) => {
+        // setSearchValue(e.target.value);
         search(e.target.value);
     };
 
