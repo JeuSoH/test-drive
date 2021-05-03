@@ -1,0 +1,29 @@
+.edit-textareas {
+  display: flex;
+  min-height: 70vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-textareas textarea,
+.edit__btn {
+  width: 50%;
+  height: 50px;
+  font-size: 20px;
+  margin: 2vh;
+}
+
+.edit__btn {
+  color: white;
+  background-color: black;
+  border-radius: 5px;
+  transition: 300ms;
+  border: none;
+  margin: 3vh;
+  padding: 5px 10px;
+}
+
+.edit__btn:hover {
+  background-color: rgb(49, 45, 45);
+}

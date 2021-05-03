@@ -207,17 +207,6 @@ const ShoeDetails = (props) => {
                         </div>
                     </>
                 )}
-                {editStatus ? (
-                    <button onClick={handleSave}>Сохранить</button>
-                ) : (
-                    <div>
-                        <img
-                            onClick={() => setEditStatus(true)}
-                            className="edit_icon"
-                            src={Edit}
-                        />
-                    </div>
-                )}
             </div>
         </div>
     );
