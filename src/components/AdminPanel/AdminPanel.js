@@ -2,9 +2,9 @@ import React, { useContext, useEffect } from 'react';
 import { useHistory } from 'react-router';
 import { authContext } from '../../contexts/AuthContext';
 import { shoesContext } from '../../contexts/shoesContext';
-import './AdminPannel.css'
+import './AdminPanel.css'
 
-const AdminPannel = () => {
+const AdminPanel = () => {
     const { currentUser } = useContext(authContext);
     const { shoesData, getShoes, deleteShoe } = useContext(shoesContext);
     const history = useHistory();
@@ -47,4 +47,4 @@ const AdminPannel = () => {
         );
 };
 
-export default AdminPannel;
+export default AdminPanel;
