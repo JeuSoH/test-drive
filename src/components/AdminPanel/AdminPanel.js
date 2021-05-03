@@ -22,7 +22,7 @@ const AdminPanel = () => {
             {
                 shoesData.map(elem => (
                     <div key={elem.id} className="admin-pannel__element">
-                        <img src={elem.images} alt="shoe-photo" />
+                        <img src={elem.images[0]} alt="shoe-photo" />
                         <span>{elem.brand}</span>
                         <span>Модель: {elem.model}</span>
                         <span>Цвет: {elem.color}</span>
