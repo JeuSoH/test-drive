@@ -3,7 +3,7 @@ import { shoesContext } from "../../contexts/shoesContext";
 import "./ShoeDetails.css";
 import Share from "../../assets/img/share.png";
 import { Link, useHistory } from "react-router-dom";
-import Star from "../../assets/img/star.png";
+// import Star from "../../assets/img/star.png";
 import Nike from "../../assets/img/nike.svg";
 import Adidas from "../../assets/img/adidas.svg";
 import Puma from "../../assets/img/puma.svg";
@@ -11,8 +11,14 @@ import Box from "../../assets/img/box.png";
 import Clothes from "../../assets/img/clothes.png";
 import Exch from "../../assets/img/exchange.png";
 import Edit from "../../assets/img/edit.png";
+import ReactStars from "react-rating-stars-component";
+import { render } from "react-dom";
 
 const ShoeDetails = (props) => {
+    const ratingChanged = (newRating) => {
+        console.log(newRating);
+    };
+
     const { getShoeDetails, saveShoe, shoeDetails } = useContext(shoesContext);
     const [editStatus, setEditStatus] = useState(false);
     const [editedShoe, setEditedShoe] = useState({});
@@ -87,11 +93,18 @@ const ShoeDetails = (props) => {
                         <div className="det_details">
                             <p>Артикул:{shoeDetails.id}</p>
                             <div className="icon_star">
-                                <img src={Star} />
-                                <img src={Star} />
-                                <img src={Star} />
-                                <img src={Star} />
-                                <img src={Star} />
+                                <ReactStars
+                                    count={5}
+                                    onChange={ratingChanged}
+                                    size={24}
+                                    isHalf={true}
+                                    emptyIcon={<i className="far fa-star"></i>}
+                                    halfIcon={
+                                        <i className="fa fa-star-half-alt"></i>
+                                    }
+                                    fullIcon={<i className="fa fa-star"></i>}
+                                    activeColor="#ffd700"
+                                />
                             </div>
                         </div>
                         <div className="det_welcome">

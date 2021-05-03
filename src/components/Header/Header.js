@@ -1,13 +1,21 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./Header.css";
 import { authContext } from "../../contexts/AuthContext";
 import Search from "../../assets/img/search.svg";
 import Cart from "../../assets/img/cart.svg";
 import { Link, useHistory } from "react-router-dom";
+import { shoesContext } from "../../contexts/shoesContext";
 
 const Header = () => {
     const { currentUser, logoutUser } = useContext(authContext);
     const history = useHistory();
+
+    const { search, searchData } = useContext(shoesContext);
+    const { searchValue, setSearchValue } = useState("");
+
+    const handleValue = (e) => {
+        search(e.target.value);
+    };
 
     return (
         <div>
@@ -20,7 +28,23 @@ const Header = () => {
                             </p>
                         </div>
                         <div className="navbar_right">
-                            <img className="icon" src={Search} alt="" />
+                            <div className="search">
+                                <input
+                                    onChange={handleValue}
+                                    className="inp_search"
+                                    placeholder="Поиск"
+                                />
+                                <div className="search-result">
+                                    {searchData.map((item) => (
+                                        <Link to={`/details/${item.id}`}>
+                                            <div className="search-item">
+                                                {item.brand}
+                                                {item.model}
+                                            </div>
+                                        </Link>
+                                    ))}
+                                </div>
+                            </div>
                             <div
                                 onClick={() => history.push("/cart")}
                                 className="cart"
