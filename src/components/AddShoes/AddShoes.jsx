@@ -13,20 +13,19 @@ const AddShoes = () => {
         size: "",
         color: "",
         price: "",
-        images: "",
-        oneImg: "",
-        twoImg: "",
-        threeImg: "",
-        fourImg: "",
+        images: []
     });
 
     const { postNewShoe } = useContext(shoesContext);
 
     const handleValue = (e) => {
-        let newShoe = {
-            ...shoe,
-            [e.target.name]: e.target.value,
-        };
+        console.log(e);
+        let newShoe = { ...shoe}
+        if(e.target.name === 'images'){
+           newShoe.images.push(e.target.value)
+        }else{
+            newShoe[e.target.name] = e.target.value
+        }
         setShoe(newShoe);
     };
 
@@ -41,11 +40,7 @@ const AddShoes = () => {
             size: "",
             color: "",
             price: "",
-            images: "",
-            oneImg: "",
-            twoImg: "",
-            threeImg: "",
-            fourImg: "",
+            images: []
         });
         if (
             shoe.brand === "" ||
@@ -56,11 +51,7 @@ const AddShoes = () => {
             shoe.size === "" ||
             shoe.color === "" ||
             shoe.price === "" ||
-            shoe.images === "" ||
-            shoe.oneImg === "" ||
-            shoe.twoImg === "" ||
-            shoe.threeImg === "" ||
-            shoe.fourImg === ""
+            shoe.images.length === 0
         ) {
             alert("Заполните все поля");
         }
@@ -208,42 +199,42 @@ const AddShoes = () => {
                     <label>7)Главное изображение:</label>
                     <input
                         className="inp-add"
-                        value={shoe.images}
+                        value={shoe.images[0]}
                         name="images"
                         onChange={handleValue}
-                        type="file"
+                        type="text"
                     />
                     <label>Доп.Изображения:</label>
                     <input
                         className="inp-add"
-                        value={shoe.oneImg}
-                        name="oneImg"
+                        value={shoe.images[1]}
+                        name="images"
                         onChange={handleValue}
-                        type="file"
+                        type="text"
                     />
                     <label>Доп.Изображения:</label>
                     <input
                         className="inp-add"
-                        value={shoe.twoImg}
-                        name="twoImg"
+                        value={shoe.images[2]}
+                        name="images"
                         onChange={handleValue}
-                        type="file"
+                        type="text"
                     />
                     <label>Доп.Изображения:</label>
                     <input
                         className="inp-add"
-                        value={shoe.threeImg}
-                        name="threeImg"
+                        value={shoe.images[3]}
+                        name="images"
                         onChange={handleValue}
-                        type="file"
+                        type="text"
                     />
                     <label>Доп.Изображения:</label>
                     <input
                         className="inp-add"
-                        value={shoe.fourImg}
-                        name="fourImg"
+                        value={shoe.images[4]}
+                        name="images"
                         onChange={handleValue}
-                        type="file"
+                        type="text"
                     />
                 </div>
                 <div className="btn-inps">
