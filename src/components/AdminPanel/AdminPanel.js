@@ -10,7 +10,7 @@ const AdminPanel = () => {
     const history = useHistory();
 
     useEffect(() => {
-        getShoes();
+        getShoes(history);
     }, []);
 
     function handleEditBtn(id) {

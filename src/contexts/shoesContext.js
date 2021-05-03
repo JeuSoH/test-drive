@@ -38,20 +38,30 @@ const reducer = (state = INIT_STATE, action) => {
 };
 
 const ShoesContextProvider = ({ children }) => {
-    const history = useHistory();
+    let history = useHistory();
     function postNewShoe(shoe) {
         axios.post(`${JSON_API}`, shoe);
     }
     async function getShoes(history) {
+        console.log(history);
+        const search = new URLSearchParams(history.location.search);
+        search.set("_limit", 6);
+        history.push(`${history.location.pathname}?${search.toString()}`);
+
         let res = await axios.get(`${JSON_API}${window.location.search}`);
         dispatch({
             type: "GET_SHOES",
             payload: res,
         });
     }
+
     async function deleteShoe(id) {
         await axios.delete(`http://localhost:8000/shoes/${id}`);
-        getShoes(history);
+        let res = await axios.get(`${JSON_API}`);
+        dispatch({
+            type: "GET_SHOES",
+            payload: res,
+        });
     }
     async function getShoeDetails(id) {
         let { data } = await axios.get(`http://localhost:8000/shoes/${id}`);
@@ -168,7 +178,7 @@ const ShoesContextProvider = ({ children }) => {
                 checkShoeInCart,
                 changeCount,
                 deleteFromCart,
-                search,
+                search
             }}
         >
             {children}

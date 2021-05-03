@@ -132,7 +132,7 @@ const ShoeDetails = (props) => {
                                 <div className="image">
                                     <img
                                         className="image_img"
-                                        src={shoeDetails.images[0]}
+                                        src={detailsImage}
                                     />
                                 </div>
                                 <div className="det_inf">

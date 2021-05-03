@@ -13,20 +13,19 @@ const AddShoes = () => {
         size: "",
         color: "",
         price: "",
-        images: "",
-        oneImg: "",
-        twoImg: "",
-        threeImg: "",
-        fourImg: "",
+        images: []
     });
 
     const { postNewShoe } = useContext(shoesContext);
 
     const handleValue = (e) => {
-        let newShoe = {
-            ...shoe,
-            [e.target.name]: e.target.value,
-        };
+        console.log(e);
+        let newShoe = { ...shoe}
+        if(e.target.name === 'images'){
+           newShoe.images.push(e.target.value)
+        }else{
+            newShoe[e.target.name] = e.target.value
+        }
         setShoe(newShoe);
     };
 
@@ -41,11 +40,7 @@ const AddShoes = () => {
             size: "",
             color: "",
             price: "",
-            images: "",
-            oneImg: "",
-            twoImg: "",
-            threeImg: "",
-            fourImg: "",
+            images: []
         });
         if (
             shoe.brand === "" ||
@@ -56,11 +51,7 @@ const AddShoes = () => {
             shoe.size === "" ||
             shoe.color === "" ||
             shoe.price === "" ||
-            shoe.images === "" ||
-            shoe.oneImg === "" ||
-            shoe.twoImg === "" ||
-            shoe.threeImg === "" ||
-            shoe.fourImg === ""
+            shoe.images.length === 0
         ) {
             alert("Заполните все поля");
         }
@@ -68,20 +59,35 @@ const AddShoes = () => {
     return (
         <div className="inputs">
             <div className="container">
-                <div className="inps_block">
-                    <select
-                        className="inp-add"
-                        value={shoe.brand}
+                <div className="add_block">
+                    <label>1)Brand:</label>
+                    <label className="label_first">Nike</label>
+                    <input
+                        className="radio_inp"
+                        type="radio"
                         name="brand"
+                        value="Nike"
                         onChange={handleValue}
-                    >
-                        <optgroup label="Brand">
-                            <option value="Nike">Nike</option>
-                            <option value="Adidas">Adidas</option>
-                            <option value="Puma">Puma</option>
-                        </optgroup>
-                    </select>
-
+                    />
+                    <label className="label_add">Adidas</label>
+                    <input
+                        className="radio_inp"
+                        type="radio"
+                        name="brand"
+                        value="Adidas"
+                        onChange={handleValue}
+                    />
+                    <label className="label_add">Puma</label>
+                    <input
+                        className="radio_inp"
+                        type="radio"
+                        name="brand"
+                        value="Puma"
+                        onChange={handleValue}
+                    />
+                </div>
+                <div className="add_block">
+                    <label>2)Model:</label>
                     <input
                         className="inp-add"
                         value={shoe.model}
@@ -91,102 +97,56 @@ const AddShoes = () => {
                         placeholder="Модель"
                     />
                 </div>
-                <div className="inps_block">
-                    <select
-                        className="inp-add"
-                        value={shoe.sex}
-                        name="sex"
-                        onChange={handleValue}
-                    >
-                        <optgroup label="Пол">
-                            <option value="Men">Men</option>
-                            <option value="Women">Women</option>
-                        </optgroup>
-                    </select>
-                    <select
-                        className="inp-add"
-                        value={shoe.category}
+                <div className="add_block">
+                    <label>3)Category:</label>
+                    <label className="label_first">Running</label>
+                    <input
+                        type="radio"
                         name="category"
+                        value="Running"
                         onChange={handleValue}
-                    >
-                        <optgroup label="Category">
-                            <option value="Running">Running</option>
-                            <option>Football</option>
-                            <option>Basketball</option>
-                            <option>Jordan</option>
-                            <option>Air max</option>
-                        </optgroup>
-                    </select>
-                </div>
-                <div className="inps_block">
-                    <input
-                        className="inp-add"
-                        value={shoe.size}
-                        name="size"
-                        onChange={handleValue}
-                        type="number"
-                        placeholder="Размер"
                     />
+                    <label className="label_add">Football</label>
                     <input
-                        className="inp-add"
-                        value={shoe.color}
-                        name="color"
+                        type="radio"
+                        name="category"
+                        value="Football"
                         onChange={handleValue}
-                        type="text"
-                        placeholder="Цвет"
                     />
+                    <label className="label_add">Bassketball</label>
                     <input
-                        className="inp-add"
-                        value={shoe.price}
-                        name="price"
+                        type="radio"
+                        name="category"
+                        value="Bassketball"
                         onChange={handleValue}
-                        type="number"
-                        placeholder="Цена(сом)"
+                    />
+                    <label className="label_add">Jordan</label>
+                    <input
+                        type="radio"
+                        name="category"
+                        value="Jordan"
+                        onChange={handleValue}
                     />
                 </div>
-                <div className="inps_block">
+                <div className="add_block">
+                    <label>4)Sex:</label>
+                    <label className="label_first">Men</label>
                     <input
-                        className="inp-add"
-                        value={shoe.images}
-                        name="images"
+                        type="radio"
+                        name="sex"
+                        value="Men"
                         onChange={handleValue}
-                        type="text"
-                        placeholder="Изображение"
                     />
+                    <label className="label_add">Women</label>
                     <input
-                        className="inp-add"
-                        value={shoe.oneImg}
-                        name="oneImg"
+                        type="radio"
+                        name="sex"
+                        value="Women"
                         onChange={handleValue}
-                        type="text"
-                        placeholder="Изображение"
-                    />
-                    <input
-                        className="inp-add"
-                        value={shoe.twoImg}
-                        name="twoImg"
-                        onChange={handleValue}
-                        type="text"
-                        placeholder="Изображение"
                     />
                 </div>
-                <div className="inps_block">
-                    <input
-                        className="inp-add"
-                        value={shoe.threeImg}
-                        name="threeImg"
-                        onChange={handleValue}
-                        type="text"
-                        placeholder="Изображение"
-                    />
-                    <input
-                        className="inp-add"
-                        value={shoe.fourImg}
-                        name="fourImg"
-                        onChange={handleValue}
-                        type="text"
-                        placeholder="Изображение"
-                    />
+                <div className="add_block">
+                    <label>5)Description:</label>
                     <input
                         className="inp-add"
                         value={shoe.description}
@@ -196,7 +156,87 @@ const AddShoes = () => {
                         placeholder="Описание"
                     />
                 </div>
-
+                <div className="add_block">
+                    <label>6)Size:</label>
+                    <label className="label_first">38</label>
+                    <input
+                        type="checkbox"
+                        name="size"
+                        value="38"
+                        onChange={handleValue}
+                    />
+                    <label className="label_add">39</label>
+                    <input
+                        type="checkbox"
+                        name="size"
+                        value="39"
+                        onChange={handleValue}
+                    />
+                </div>
+                <div className="add_block">
+                    <label>6)Color:</label>
+                    <input
+                        className="inp-add"
+                        value={shoe.color}
+                        name="color"
+                        onChange={handleValue}
+                        type="text"
+                        placeholder="Цвет"
+                    />
+                </div>
+                <div className="add_block">
+                    <label>6)Price: $</label>
+                    <input
+                        className="inp-add"
+                        value={shoe.price}
+                        name="price"
+                        onChange={handleValue}
+                        type="number"
+                        placeholder="Цена"
+                    />
+                </div>
+                <div className="add_block">
+                    <label>7)Главное изображение:</label>
+                    <input
+                        className="inp-add"
+                        value={shoe.images[0]}
+                        name="images"
+                        onChange={handleValue}
+                        type="text"
+                    />
+                    <label>Доп.Изображения:</label>
+                    <input
+                        className="inp-add"
+                        value={shoe.images[1]}
+                        name="images"
+                        onChange={handleValue}
+                        type="text"
+                    />
+                    <label>Доп.Изображения:</label>
+                    <input
+                        className="inp-add"
+                        value={shoe.images[2]}
+                        name="images"
+                        onChange={handleValue}
+                        type="text"
+                    />
+                    <label>Доп.Изображения:</label>
+                    <input
+                        className="inp-add"
+                        value={shoe.images[3]}
+                        name="images"
+                        onChange={handleValue}
+                        type="text"
+                    />
+                    <label>Доп.Изображения:</label>
+                    <input
+                        className="inp-add"
+                        value={shoe.images[4]}
+                        name="images"
+                        onChange={handleValue}
+                        type="text"
+                    />
+                </div>
                 <div className="btn-inps">
                     <button className="btn-add" onClick={handleClick}>
                         Добавить
