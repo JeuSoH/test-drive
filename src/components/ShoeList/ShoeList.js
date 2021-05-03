@@ -1,20 +1,47 @@
-import React, { useContext, useEffect } from "react";
+import { Grid } from "@material-ui/core";
+import { Pagination } from "@material-ui/lab";
+import React, { useContext, useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import { shoesContext } from "../../contexts/shoesContext";
 import ShoeCard from "../ShoeCard/ShoeCard";
 import "./ShoeList.css";
 
 const ShoeList = () => {
-    const { getShoes, shoesData } = useContext(shoesContext);
+    const { getShoes, shoesData, paginationPages } = useContext(shoesContext);
+
+    const history = useHistory();
+    const [page, setPage] = useState(getPage());
+
+    function getPage() {
+        const search = new URLSearchParams(history.location.search);
+        return search.get("_page");
+    }
+
+    const handlePage = (e, page) => {
+        const search = new URLSearchParams(history.location.search);
+        search.set("_page", page);
+        history.push(`${history.location.pathname}?${search.toString()}`);
+        setPage(page);
+        getShoes(history);
+    };
 
     useEffect(() => {
-        getShoes();
+        getShoes(history);
     }, []);
     return (
-        <div className="list">
-            {shoesData.map((item) => (
-                <ShoeCard key={item.id} item={item} />
-            ))}
-        </div>
+        <>
+            <Grid container spacing={3}>
+                {shoesData.map((item) => (
+                    <ShoeCard key={item.id} item={item} />
+                ))}
+                <Pagination
+                    page={+page}
+                    onChange={handlePage}
+                    count={paginationPages}
+                    color="primary"
+                />
+            </Grid>
+        </>
     );
 };
 
