@@ -32,7 +32,6 @@ const ShoesContextProvider = ({ children }) => {
     }
     async function getShoes() {
         let { data } = await axios.get("http://localhost:8000/shoes");
-        console.log(data);
         dispatch({
             type: "GET_SHOES",
             payload: data,

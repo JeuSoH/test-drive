@@ -10,7 +10,6 @@ import Puma from "../../assets/img/puma.svg";
 import Box from "../../assets/img/box.png";
 import Clothes from "../../assets/img/clothes.png";
 import Exch from "../../assets/img/exchange.png";
-import Edit from "../../assets/img/edit.png";
 
 const ShoeDetails = (props) => {
     const { getShoeDetails, saveShoe, shoeDetails } = useContext(shoesContext);
@@ -193,17 +192,6 @@ const ShoeDetails = (props) => {
                             </div>
                         </div>
                     </>
-                )}
-                {editStatus ? (
-                    <button onClick={handleSave}>Сохранить</button>
-                ) : (
-                    <div>
-                        <img
-                            onClick={() => setEditStatus(true)}
-                            className="edit_icon"
-                            src={Edit}
-                        />
-                    </div>
                 )}
             </div>
         </div>
