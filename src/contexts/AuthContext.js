@@ -32,6 +32,10 @@ const AuthContextProvider = ({ children }) => {
     useEffect(() => {
         app.auth().onAuthStateChanged((user) => {
             setCurrentUser(user);
+            dispatch({
+                type: "GET_CURRENT_USER",
+                payload: user
+            })
             console.log(user);
         });
     }, []);
