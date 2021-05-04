@@ -22,6 +22,7 @@ const ShoeDetails = (props) => {
     const { getShoeDetails, saveShoe, shoeDetails } = useContext(shoesContext);
     const [editStatus, setEditStatus] = useState(false);
     const [editedShoe, setEditedShoe] = useState({});
+    const [detailsImage, setDetailsImage] = useState("");
 
     const history = useHistory();
 
@@ -41,7 +42,14 @@ const ShoeDetails = (props) => {
 
     useEffect(() => {
         getShoeDetails(props.match.params.id);
+        if (shoeDetails.images) {
+            setDetailsImage(shoeDetails.images[0]);
+        }
     }, []);
+
+    function switchImage(index) {
+        setDetailsImage(shoeDetails.images[index]);
+    }
 
     return (
         <div className="details_card">
@@ -73,15 +81,15 @@ const ShoeDetails = (props) => {
                             {shoeDetails.price}
                         </textarea>
                     </div>
-                ) : (
+                ) : shoeDetails.images ? (
                     <>
                         <div className="det_nav">
                             <button className="back_det">
                                 <Link to="/">Назад </Link>
                             </button>
-                            <div className="share">
+                            {/* <div className="share">
                                 <img className="icon_det" src={Share} />
-                            </div>
+                            </div> */}
                         </div>
                         <div className="det_title">
                             <p className="det_brand">{shoeDetails.brand} /</p>
@@ -109,36 +117,21 @@ const ShoeDetails = (props) => {
                         </div>
                         <div className="det_welcome">
                             <div className="det_images">
-                                <img
-                                    className="det_img"
-                                    src={shoeDetails.images}
-                                />
-                                <img
-                                    className="det_img"
-                                    src={shoeDetails.oneImg}
-                                />
-                                <img
-                                    className="det_img"
-                                    src={shoeDetails.twoImg}
-                                />
-                                <img
-                                    className="det_img"
-                                    src={shoeDetails.threeImg}
-                                />
-                                <img
-                                    className="det_img"
-                                    src={shoeDetails.fourImg}
-                                />
+                                {shoeDetails.images.map((elem, index) => (
+                                    <img
+                                        onClick={() => switchImage(index)}
+                                        key={elem.id}
+                                        className="det_img"
+                                        src={elem}
+                                    />
+                                ))}
                             </div>
                             <div className="image">
-                                <img
-                                    className="image_img"
-                                    src={shoeDetails.images}
-                                />
+                                <img className="image_img" src={detailsImage} />
                             </div>
                             <div className="det_inf">
                                 <p className="det_price">
-                                    {shoeDetails.price} сом
+                                    {shoeDetails.price} $
                                 </p>
                                 <p className="det_color">
                                     Цвет:{shoeDetails.color}
@@ -206,17 +199,8 @@ const ShoeDetails = (props) => {
                             </div>
                         </div>
                     </>
-                )}
-                {editStatus ? (
-                    <button onClick={handleSave}>Сохранить</button>
                 ) : (
-                    <div>
-                        <img
-                            onClick={() => setEditStatus(true)}
-                            className="edit_icon"
-                            src={Edit}
-                        />
-                    </div>
+                    ""
                 )}
             </div>
         </div>

@@ -13,7 +13,7 @@ const ShoeCard = ({ item }) => {
             <div className="card">
                 <div className="card_img">
                     {""}
-                    <img className="foot_img" src={item.images} />
+                    <img className="foot_img" src={item.images[0]} />
                     <div className="card_desc_brand">
                         <p className="card_brand">{item.brand}</p>
                         <p className="card_model">{item.model}</p>
@@ -27,11 +27,7 @@ const ShoeCard = ({ item }) => {
                             className="icon_card"
                             src={Basket}
                         />
-                        <img
-                            onClick={() => deleteShoe(item.id)}
-                            className="icon_card"
-                            src={Delete}
-                        />
+                        <img style={{ backgroundColor: checkShoeInCart(item.id) ? "gray" : "white" }} onClick={() => addToCart(item)} className="icon_card" src={Basket} />
                     </div>
                     <div className="block_price">
                         <p className="block_pr">{item.price} $</p>

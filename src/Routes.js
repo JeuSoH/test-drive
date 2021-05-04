@@ -12,6 +12,9 @@ import ShoeDetails from "./components/ShoeDetails/ShoeDetails";
 import Profile from "./components/Profile/Profile";
 import UsersContextProvider from "./contexts/UsersContext";
 import Cart from "./components/Cart/Cart";
+import AdminPanel from "./components/AdminPanel/AdminPanel";
+import EditShoe from "./components/EditShoe/EditShoe";
+import Footer from "./components/Footer/Footer";
 
 const Routes = () => {
     return (
@@ -28,9 +31,20 @@ const Routes = () => {
                             <Route exact path="/register" component={SignUp} />
                             <Route exact path="/profile" component={Profile} />
                             <Route exact path="/cart" component={Cart} />
-                            <Route exact path="/details/:id" component={ShoeDetails}  />
+                            <Route
+                                exact
+                                path="/details/:id"
+                                component={ShoeDetails}
+                            />
+                            <Route exact path="/admin" component={AdminPanel} />
+                            <Route
+                                exact
+                                path="/edit/:id"
+                                component={EditShoe}
+                            />
                             <Redirect to="/" />
                         </Switch>
+                        <Footer />
                     </BrowserRouter>
                 </UsersContextProvider>
             </AuthContextProvider>

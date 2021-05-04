@@ -1,0 +1,70 @@
+.admission {
+    margin-top: 20px;
+}
+.admission_logo {
+    font-size: 48px;
+    font-weight: 500;
+    color: #000;
+}
+.admission_blog {
+    justify-content: space-between;
+    margin-top: 30px;
+    display: flex;
+    padding-bottom: 100px;
+}
+.admission_future {
+    background-image: url(../../assets/img/future.png);
+    width: 566px;
+    height: 520px;
+}
+.admission_cleats {
+    background-image: url(../../assets/img/cleats.png);
+    width: 566px;
+    height: 520px;
+}
+.admission_blog span {
+    bottom: 200px;
+    font-size: 24px;
+    padding-left: 30px;
+    font-weight: 500;
+    padding-bottom: 60px;
+}
+.admission_left {
+    margin-top: 414px;
+}
+.admission_right {
+    margin-top: 414px;
+}
+.admission_left_type {
+    color: #000;
+    height: 0px;
+}
+.admission_right_type {
+    color: #fff;
+    height: 0px;
+}
+.btn_ftr {
+    margin-top: 5px;
+    font-size: 24px;
+    width: 174px;
+    height: 42px;
+    background: #672020;
+    bottom: 150px;
+    margin-left: 30px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+}
+.btn_cts {
+    margin-top: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 30px;
+    font-size: 24px;
+    bottom: 150px;
+    margin-left: 30px;
+    width: 174px;
+    height: 42px;
+    background: #fff;
+}
