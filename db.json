@@ -29,33 +29,37 @@
   "shoes": [
     {
       "brand": "Nike",
-      "model": "jordan 1 mid metallic red",
+      "model": "Air",
       "sex": "Men",
-      "category": "Jordan",
-      "description": "",
-      "size": "39",
-      "color": "Red",
-      "price": "250",
+      "category": "Running",
+      "description": "Технология Nike Air состоит из сжатого воздуха внутри жесткого, но гибкого мешка, который обеспечивает большую гибкость и упругость без ущерба для конструкции. Кроссовки Air Sole сохраняют свою заданную форму, обладают эластичностью, снижают ударную нагрузку и сохраняют удобство и легкость обуви.",
+      "size": "38",
+      "color": "Белый",
+      "price": "2000",
       "images": [
-        "https://static.sneakerjagers.com/products/660x660/199138.jpg",
-        "https://images.restocks.net/products/554724-122/air-jordan-1-mid-metallic-red-2-1000.png",
-        "https://images.restocks.net/products/554724-122/air-jordan-1-mid-metallic-red-3-1000.png"
+        "https://static.nike.com/a/images/f_auto/dpr_1.3/w_1407,c_limit/650d094a-53b9-4a19-a9ff-619440e09c84/nike-air.jpg",
+        "https://static.nike.com/a/images/f_auto/dpr_1.3/w_1407,c_limit/e7ca0e54-8c93-4f70-b53f-3b798f343b78/nike-air.jpg",
+        "https://static.nike.com/a/images/f_auto/dpr_1.3/w_1407,c_limit/868077d9-356b-4325-943f-035bc39f676d/nike-air.jpg",
+        "https://static.nike.com/a/images/f_auto/dpr_1.3/w_1407,c_limit/b3600499-b4a7-48ce-8cf9-bab883f36977/nike-air.jpg",
+        "https://static.nike.com/a/images/f_auto/dpr_1.3/w_1407,c_limit/be15e182-c2e7-4abe-b67b-ecacc6f5192a/nike-air.jpg"
       ],
       "id": 1
     },
     {
-      "brand": "Nike",
-      "model": " Jordan 1 Retro High Travis Scott",
+      "brand": "Adidas",
+      "model": "ULTRABOOST 21",
       "sex": "Men",
-      "category": "Jordan",
-      "description": "",
-      "size": "39",
-      "color": "Green",
-      "price": "750",
+      "category": "Running",
+      "description": "Новая торсионная система обеспечивает увеличение жесткости передней части стопы на изгиб на 15% для более быстрого бега.",
+      "size": "38",
+      "color": "Белый",
+      "price": "2990",
       "images": [
-        "https://cdn.webshopapp.com/shops/292955/files/362332715/air-jordan-1-high-travis-scott.jpg",
-        "https://cdn.shopify.com/s/files/1/0015/1263/6483/products/Jordan_1_Retro_High_Travis_Scott_800x.png?v=1550582178",
-        "https://images.restocks.net/products/CD4487-100/travis-scott-x-air-jordan-1-cactus-jack-90823-4-1000.png"
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/33a1f66c4e0b41c4b9d2ac91005f9db9_9366/Ultraboost_21_Shoes_Black_FY0306_01_standard.jpg",
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/6e9480d180ec40d484f4ac91005fbb1b_9366/Ultraboost_21_Shoes_Black_FY0306_02_standard_hover.jpg",
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/e60e81c993454a81863dac91005e9f8a_9366/Ultraboost_21_Shoes_Black_FY0306_03_standard.jpg",
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/e2f709630da14ed38625ac9100603d54_9366/Ultraboost_21_Shoes_Black_FY0306_04_standard.jpg",
+        "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/d3719bda442a495eb49fac91005e85b2_9366/Ultraboost_21_Shoes_Black_FY0306_05_standard.jpg"
       ],
       "id": 2
     },

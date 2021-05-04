@@ -98,11 +98,12 @@ a {
   border-style: dashed;
 }
 .search-item {
-    background-color: #dbdada;
-    border-radius: 5px;
-    margin-bottom: 5px;
-    border-bottom: 1px solid black;
-    display: flex;
+  background-color: #dbdada;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid black;
+  display: flex;
+}
 .search-result {
   width: 100%;
   position: absolute;
@@ -118,8 +119,8 @@ a {
     display: none;
 } */
 .search-item img {
-    width: 100px;
+  width: 100px;
 }
 .search-item div {
-    margin-top: 10px;
+  margin-top: 10px;
 }

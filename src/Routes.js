@@ -14,6 +14,7 @@ import UsersContextProvider from "./contexts/UsersContext";
 import Cart from "./components/Cart/Cart";
 import AdminPanel from "./components/AdminPanel/AdminPanel";
 import EditShoe from "./components/EditShoe/EditShoe";
+import OrderForm from "./components/OrderForm/OrderForm";
 import Footer from "./components/Footer/Footer";
 
 const Routes = () => {
@@ -37,6 +38,8 @@ const Routes = () => {
                                 component={ShoeDetails}
                             />
                             <Route exact path="/admin" component={AdminPanel} />
+                            <Route exact path="/edit/:id" component={EditShoe} />
+                            <Route exact path="/order-form" component={OrderForm} />
                             <Route
                                 exact
                                 path="/edit/:id"
