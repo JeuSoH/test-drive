@@ -38,8 +38,16 @@ const Routes = () => {
                                 component={ShoeDetails}
                             />
                             <Route exact path="/admin" component={AdminPanel} />
-                            <Route exact path="/edit/:id" component={EditShoe} />
-                            <Route exact path="/order-form" component={OrderForm} />
+                            <Route
+                                exact
+                                path="/edit/:id"
+                                component={EditShoe}
+                            />
+                            <Route
+                                exact
+                                path="/order-form"
+                                component={OrderForm}
+                            />
                             <Route
                                 exact
                                 path="/edit/:id"
