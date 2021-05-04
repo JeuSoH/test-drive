@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import "./Header.css";
 import { authContext } from "../../contexts/AuthContext";
-import Search from "../../assets/img/search.svg";
+import SettingsIcon from '@material-ui/icons/Settings';
 import Cart from "../../assets/img/cart.svg";
 import { Link, useHistory } from "react-router-dom";
 import { shoesContext } from "../../contexts/shoesContext";
@@ -57,11 +57,6 @@ const Header = () => {
                             >
                                 <img src={Cart} alt="" />
                             </div>
-                            <div className="navbar__add-btn">
-                                <p>
-                                    <Link to="/add">Добавить</Link>
-                                </p>
-                            </div>
                             {currentUser ? (
                                 <div className="log-in-out-container">
                                     <p
@@ -70,6 +65,7 @@ const Header = () => {
                                     >
                                         ВЫЙТИ
                                     </p>
+                                    <Link to="/profile" className="settings-btn"><SettingsIcon /></Link>
                                 </div>
                             ) : (
                                 <div
