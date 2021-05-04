@@ -1,25 +1,14 @@
 {
   "user": {
-    "firstName": "Conor",
-    "lastName": "McGregor",
-    "address": "Bishkek, Kyrgyzstan, Aitmatov str. 132",
+    "firstName": "Артур",
+    "lastName": "Мартеросян",
+    "address": "Bishkek, Kyrgyzstan, 720077",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsJ774VL7RjYJGKgiFM2E1DmvLT3NeldlBWA&usqp=CAU",
     "orders": [
       {
-        "id": "1",
-        "orderDate": "12/12/2021",
-        "total": "3200 сом",
-        "status": "Выполнено"
-      },
-      {
-        "id": "2",
-        "orderDate": "12/12/2021",
-        "total": "3200 сом",
-        "status": "Обработка"
-      },
-      {
-        "id": "3",
-        "orderDate": "12/12/2021",
-        "total": "3200 сом",
+        "id": 1620122459962,
+        "total": 2000,
+        "orderDate": "05/04/2021",
         "status": "Обработка"
       }
     ]

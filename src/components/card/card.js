@@ -5,11 +5,13 @@ import { shoesContext } from "../../contexts/shoesContext";
 import { authContext } from "../../contexts/AuthContext";
 import "./Card.css";
 import { usersContext } from "../../contexts/UsersContext";
+import { useHistory } from "react-router";
 
 const Card = () => {
     const { currentUser } = useContext(authContext);
     const { cart, getCart } = useContext(shoesContext);
     const { submitShop } = useContext(usersContext);
+    const history = useHistory();
 
     useEffect(() => {
         getCart();
@@ -21,6 +23,11 @@ const Card = () => {
     const [expiry, setExpiry] = useState('')
     const [cvc, setCvc] = useState('')
     const [focus, setFocus] = useState('')
+
+    function handleBuyBtn(event, sum) {
+        event.preventDefault();
+        submitShop(sum, history);
+    }
 
     return currentUser ? (
         <div className="card__container">
@@ -72,7 +79,7 @@ const Card = () => {
                         onChange={(e) => setCvc(e.target.value)}
                         onFocus={(e) => setFocus(e.target.name)}
                     />
-                    <button onClick={() => submitShop(cart.totalPrice)} className="card__btn">Оплатить</button>
+                    <button onClick={(event) => handleBuyBtn(event, cart.totalPrice)} className="card__btn">Оплатить</button>
                 </form>
             </div>
         </div>
