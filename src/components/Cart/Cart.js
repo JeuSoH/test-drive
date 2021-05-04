@@ -41,7 +41,7 @@ const Cart = () => {
 
                 {cart.shoes.length > 0 ?
                     (
-                        <button onClick={() => history.push("/card")} className="cart__order-btn">Оформить заказ</button>
+                        <button onClick={() => history.push("/order-form")} className="cart__order-btn">Оформить заказ</button>
                     ) : ""}
             </div>
         </div>

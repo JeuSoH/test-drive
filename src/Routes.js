@@ -14,6 +14,7 @@ import UsersContextProvider from "./contexts/UsersContext";
 import Cart from "./components/Cart/Cart";
 import AdminPanel from "./components/AdminPanel/AdminPanel";
 import EditShoe from "./components/EditShoe/EditShoe";
+import OrderForm from "./components/OrderForm/OrderForm";
 
 const Routes = () => {
     return (
@@ -33,6 +34,7 @@ const Routes = () => {
                             <Route exact path="/details/:id" component={ShoeDetails} />
                             <Route exact path="/admin" component={AdminPanel} />
                             <Route exact path="/edit/:id" component={EditShoe} />
+                            <Route exact path="/order-form" component={OrderForm} />
                             <Redirect to="/" />
                         </Switch>
                     </BrowserRouter>
