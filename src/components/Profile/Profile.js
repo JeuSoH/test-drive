@@ -24,7 +24,7 @@ const Profile = () => {
                 {orders.map(elem => (
                     <li className="table-row" key={"order" + elem.id}>
                         <div className="col col-1" data-label="Job Id">{elem.id}</div>
-                        <div className="col col-2" data-label="Customer Name">{elem.orderData}</div>
+                        <div className="col col-2" data-label="Customer Name">{elem.orderDate}</div>
                         <div className="col col-3" data-label="Amount">{elem.total}</div>
                         <div className="col col-4" data-label="Payment Status">{elem.status}</div>
                     </li>

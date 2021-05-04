@@ -4,17 +4,20 @@ import './Card.css'
 import 'react-credit-cards/es/styles-compiled.css'
 import { shoesContext } from '../../contexts/shoesContext';
 import { authContext } from '../../contexts/AuthContext';
+import { usersContext } from '../../contexts/UsersContext';
 
 
 const Card = () => {
 
     const { currentUser } = useContext(authContext);
     const { cart, getCart } = useContext(shoesContext);
+    const { submiShop } = useContext(usersContext);
 
     useEffect(() => {
         getCart();
     }, []);
 
+    console.log(currentUser);
     const [number, setNumber] = useState('')
     const [name, setName] = useState('')
     const [expiry, setExpiry] = useState('')
@@ -71,7 +74,7 @@ const Card = () => {
                         onChange={e => setCvc(e.target.value)}
                         onFocus={e => setFocus(e.target.name)}
                     />
-                    <button className="card__btn">Buy</button>
+                    <button onClick={() => submiShop(cart.totalPrice)} className="card__btn">Оплатить</button>
                 </form>
             </div>
         </div>
