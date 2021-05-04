@@ -150,7 +150,7 @@ const ShoesContextProvider = ({ children }) => {
 
     async function search(value) {
         let { data } = await axios.get(
-            `http://localhost:8000/shoes?q=${value}`
+            `http://localhost:8000/shoes?q=${value}&_limit=6`
         );
         dispatch({
             type: "SEARCH",
@@ -178,7 +178,7 @@ const ShoesContextProvider = ({ children }) => {
                 checkShoeInCart,
                 changeCount,
                 deleteFromCart,
-                search
+                search,
             }}
         >
             {children}

@@ -1,3 +1,8 @@
+.card_blocks {
+    margin-top: 50px;
+    display: flex;
+    margin-bottom: 50px;
+}
 .card_img {
     width: 350px;
     height: 350px;
@@ -13,6 +18,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     margin-right: 50px;
     margin-bottom: 120px;
+    width: 350px;
 }
 .foot_img {
     width: 350px;
@@ -28,7 +34,7 @@
     justify-content: space-between;
 }
 .card_brand {
-    margin-right: 0px;
+    margin-right: 10px;
     font-weight: bold;
     margin-top: 0;
 }

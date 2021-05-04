@@ -62,6 +62,32 @@
         "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/d3719bda442a495eb49fac91005e85b2_9366/Ultraboost_21_Shoes_Black_FY0306_05_standard.jpg"
       ],
       "id": 2
+    },
+    {
+      "brand": "Nike",
+      "model": "Salamaleikum",
+      "sex": "Men",
+      "category": "Jordan",
+      "description": "ehethhr",
+      "size": "39",
+      "color": "Green",
+      "price": "299",
+      "images": [
+        "https://images.restocks.net/products/CN1084-200/air-jordan-6-retro-travis-scott-1-1000.png"
+      ],
+      "id": 3
+    },
+    {
+      "brand": "",
+      "model": "",
+      "sex": "",
+      "category": "",
+      "description": "",
+      "size": "",
+      "color": "",
+      "price": "",
+      "images": [],
+      "id": 4
     }
   ]
 }

@@ -15,6 +15,7 @@ import Cart from "./components/Cart/Cart";
 import AdminPanel from "./components/AdminPanel/AdminPanel";
 import EditShoe from "./components/EditShoe/EditShoe";
 import OrderForm from "./components/OrderForm/OrderForm";
+import Footer from "./components/Footer/Footer";
 
 const Routes = () => {
     return (
@@ -31,12 +32,22 @@ const Routes = () => {
                             <Route exact path="/register" component={SignUp} />
                             <Route exact path="/profile" component={Profile} />
                             <Route exact path="/cart" component={Cart} />
-                            <Route exact path="/details/:id" component={ShoeDetails} />
+                            <Route
+                                exact
+                                path="/details/:id"
+                                component={ShoeDetails}
+                            />
                             <Route exact path="/admin" component={AdminPanel} />
                             <Route exact path="/edit/:id" component={EditShoe} />
                             <Route exact path="/order-form" component={OrderForm} />
+                            <Route
+                                exact
+                                path="/edit/:id"
+                                component={EditShoe}
+                            />
                             <Redirect to="/" />
                         </Switch>
+                        <Footer />
                     </BrowserRouter>
                 </UsersContextProvider>
             </AuthContextProvider>

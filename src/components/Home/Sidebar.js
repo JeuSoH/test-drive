@@ -26,7 +26,7 @@ const Sidebar = ({ history }) => {
 
     function getMemory() {
         const search = new URLSearchParams(history.location.search);
-        return search.get("category");
+        return search.get("sex");
     }
 
     function getSliderMemory() {
@@ -44,62 +44,41 @@ const Sidebar = ({ history }) => {
 
     const handleChangeMemory = (e) => {
         if (e.target.value === "all") {
-            history.push(`${history.location.pathname.replace("category")}`);
+            history.push(`${history.location.pathname.replace("sex")}`);
             getShoes(history);
             return;
         }
 
         const search = new URLSearchParams(history.location.search);
-        search.set("category", e.target.value);
+        search.set("sex", e.target.value);
         history.push(`${history.location.pathname}?${search.toString()}`);
         getShoes(history);
         setMemory(e.target.value);
     };
 
     return (
-        <Grid item md={3}>
-            <Paper className={classes.paper}>
-                <FormControl component="fieldset">
-                    <FormLabel component="legend">Gender</FormLabel>
-                    <RadioGroup
-                        value={memory}
-                        onChange={handleChangeMemory}
-                        aria-label="memory"
-                        name="memory1"
-                    >
-                        <FormControlLabel
-                            value=""
-                            control={<Radio />}
-                            label="Running"
-                        />
-                        <FormControlLabel
-                            value="Football"
-                            control={<Radio />}
-                            label="Football"
-                        />
-                        <FormControlLabel
-                            value="Basketball"
-                            control={<Radio />}
-                            label="Basketball"
-                        />
-                        <FormControlLabel
-                            value="Jordan"
-                            control={<Radio />}
-                            label="Jordan"
-                        />
-                        <FormControlLabel
-                            value="Air Max"
-                            control={<Radio />}
-                            label="Air Max"
-                        />
-                        <FormControlLabel
-                            value="all"
-                            control={<Radio />}
-                            label="all"
-                        />
-                    </RadioGroup>
-                </FormControl>
-                <Grid>
+        <div className="filter-block">
+            {/* <Grid item md={3}> */}
+            {/* <Paper className={classes.paper}> */}
+            {/* <FormControl component="fieldset"> */}
+            {/* <FormLabel component="legend">Gender</FormLabel> */}
+            <RadioGroup
+                value={memory}
+                onChange={handleChangeMemory}
+                aria-label="memory"
+                name="memory1"
+            >
+                <FormControlLabel value="Men" control={<Radio />} label="Men" />
+                <FormControlLabel
+                    value="Women"
+                    control={<Radio />}
+                    label="Women"
+                />
+
+                <FormControlLabel value="all" control={<Radio />} label="all" />
+            </RadioGroup>
+            {/* </FormControl> */}
+            {/* <Grid>
                     <Slider
                         value={sliderValue}
                         min={500}
@@ -108,9 +87,10 @@ const Sidebar = ({ history }) => {
                         valueLabelDisplay="auto"
                         aria-labelledby="range-slider"
                     />
-                </Grid>
-            </Paper>
-        </Grid>
+                </Grid> */}
+            {/* </Paper> */}
+            {/* </Grid> */}
+        </div>
     );
 };
 

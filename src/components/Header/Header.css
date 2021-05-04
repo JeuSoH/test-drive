@@ -98,8 +98,11 @@ a {
   border-style: dashed;
 }
 .search-item {
-  background-color: darkgray;
-  border-radius: 10px;
+  background-color: #dbdada;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid black;
+  display: flex;
 }
 .search-result {
   width: 100%;
@@ -108,11 +111,16 @@ a {
 
   z-index: 10;
 }
-.search-result div {
-  border-bottom: 1px solid black;
-  margin-bottom: 5px;
-}
 .search-result a {
   text-decoration: none;
   color: black;
+}
+/* .close {
+    display: none;
+} */
+.search-item img {
+  width: 100px;
+}
+.search-item div {
+  margin-top: 10px;
 }

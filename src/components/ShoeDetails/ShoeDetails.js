@@ -22,7 +22,7 @@ const ShoeDetails = (props) => {
     const { getShoeDetails, saveShoe, shoeDetails } = useContext(shoesContext);
     const [editStatus, setEditStatus] = useState(false);
     const [editedShoe, setEditedShoe] = useState({});
-    const [detailsImage, setDetailsImage] = useState('');
+    const [detailsImage, setDetailsImage] = useState("");
 
     const history = useHistory();
 
@@ -48,7 +48,7 @@ const ShoeDetails = (props) => {
     }, []);
 
     function switchImage(index) {
-        setDetailsImage(shoeDetails.images[index])
+        setDetailsImage(shoeDetails.images[index]);
     }
 
     return (
@@ -81,133 +81,126 @@ const ShoeDetails = (props) => {
                             {shoeDetails.price}
                         </textarea>
                     </div>
-                ) : (
-                    shoeDetails.images ? (
-                        <>
-                            <div className="det_nav">
-                                <button className="back_det">
-                                    <Link to="/">Назад </Link>
-                                </button>
-                                <div className="share">
-                                    <img className="icon_det" src={Share} />
-                                </div>
-                            </div>
-                            <div className="det_title">
-                                <p className="det_brand">{shoeDetails.brand} /</p>
-                                <p className="det_brand">
-                                    {shoeDetails.category} /
-                        </p>
-                                <p className="det_brand">{shoeDetails.model}</p>
-                            </div>
-                            <div className="det_details">
-                                <p>Артикул:{shoeDetails.id}</p>
-                                <div className="icon_star">
-                                    <ReactStars
-                                        count={5}
-                                        onChange={ratingChanged}
-                                        size={24}
-                                        isHalf={true}
-                                        emptyIcon={<i className="far fa-star"></i>}
-                                        halfIcon={
-                                            <i className="fa fa-star-half-alt"></i>
-                                        }
-                                        fullIcon={<i className="fa fa-star"></i>}
-                                        activeColor="#ffd700"
-                                    />
-                                </div>
-                            </div>
-                            <div className="det_welcome">
-                                <div className="det_images">
-                                    {
-                                        shoeDetails.images.map((elem, index) => (
-                                            <img
-                                                onClick={() => switchImage(index)}
-                                                key={elem.id}
-                                                className="det_img"
-                                                src={elem}
-                                            />
-                                        ))
-                                    }
-                                </div>
-                                <div className="image">
-                                    <img
-                                        className="image_img"
-                                        src={detailsImage}
-                                    />
-                                </div>
-                                <div className="det_inf">
-                                    <p className="det_price">
-                                        {shoeDetails.price} сом
-                            </p>
-                                    <p className="det_color">
-                                        Цвет:{shoeDetails.color}
-                                    </p>
-                                    <p className="det_color">
-                                        Пол:{shoeDetails.sex}
-                                    </p>
-                                    <p className="det_size">
-                                        Таблица размеров: {shoeDetails.size}
-                                    </p>
-                                    <button className="btn_inf">
-                                        Добавить в корзину
+                ) : shoeDetails.images ? (
+                    <>
+                        <div className="det_nav">
+                            <button className="back_det">
+                                <Link to="/">Назад </Link>
                             </button>
-                                    <p className="inf_dost">
-                                        Доставка:в течении недeли
+                            {/* <div className="share">
+                                <img className="icon_det" src={Share} />
+                            </div> */}
+                        </div>
+                        <div className="det_title">
+                            <p className="det_brand">{shoeDetails.brand} /</p>
+                            <p className="det_brand">
+                                {shoeDetails.category} /
                             </p>
-                                    <p className="inf_dost">
-                                        Склад отгрузки:склад StreetHead{" "}
-                                    </p>
-                                    <p className="det_size">
-                                        Продавец:StreetHead OOO
-                            </p>
-                                    <div className="inf_brand">
-                                        <img className="icon_brand" src={Nike} />
-                                        <img className="icon_brand" src={Adidas} />
-                                        <img className="icon_brand" src={Puma} />
-                                    </div>
-                                    <div className="inf_desc">
-                                        <div className="inf_block">
-                                            <img className="cloth_icon" src={Box} />
-                                            <p className="cloth_desc">
-                                                Бесплатная доставка
-                                    </p>
-                                        </div>
-                                        <div className="inf_block">
-                                            <img
-                                                className="cloth_icon"
-                                                src={Clothes}
-                                            />
-                                            <p className="cloth_desc">Примерка</p>
-                                        </div>
-                                        <div className="inf_block">
-                                            <img
-                                                className="cloth_icon"
-                                                src={Exch}
-                                            />
-                                            <p className="cloth_desc">
-                                                28 день на возврат
-                                    </p>
-                                        </div>
-                                    </div>
-                                </div>
+                            <p className="det_brand">{shoeDetails.model}</p>
+                        </div>
+                        <div className="det_details">
+                            <p>Артикул:{shoeDetails.id}</p>
+                            <div className="icon_star">
+                                <ReactStars
+                                    count={5}
+                                    onChange={ratingChanged}
+                                    size={24}
+                                    isHalf={true}
+                                    emptyIcon={<i className="far fa-star"></i>}
+                                    halfIcon={
+                                        <i className="fa fa-star-half-alt"></i>
+                                    }
+                                    fullIcon={<i className="fa fa-star"></i>}
+                                    activeColor="#ffd700"
+                                />
                             </div>
-                            <div className="det_description">
-                                <h1>Описание</h1>
-                                <p className="content_desc">
-                                    {shoeDetails.description}
+                        </div>
+                        <div className="det_welcome">
+                            <div className="det_images">
+                                {shoeDetails.images.map((elem, index) => (
+                                    <img
+                                        onClick={() => switchImage(index)}
+                                        key={elem.id}
+                                        className="det_img"
+                                        src={elem}
+                                    />
+                                ))}
+                            </div>
+                            <div className="image">
+                                <img className="image_img" src={detailsImage} />
+                            </div>
+                            <div className="det_inf">
+                                <p className="det_price">
+                                    {shoeDetails.price} $
                                 </p>
-                            </div>
-                            <div>
-                                <div className="review">
-                                    <p className="det_brand">Отзывы и вопросы</p>
-                                    <input />
-                                    <button>Оставить отзыв</button>
+                                <p className="det_color">
+                                    Цвет:{shoeDetails.color}
+                                </p>
+                                <p className="det_color">
+                                    Пол:{shoeDetails.sex}
+                                </p>
+                                <p className="det_size">
+                                    Таблица размеров: {shoeDetails.size}
+                                </p>
+                                <button className="btn_inf">
+                                    Добавить в корзину
+                                </button>
+                                <p className="inf_dost">
+                                    Доставка:в течении недeли
+                                </p>
+                                <p className="inf_dost">
+                                    Склад отгрузки:склад StreetHead{" "}
+                                </p>
+                                <p className="det_size">
+                                    Продавец:StreetHead OOO
+                                </p>
+                                <div className="inf_brand">
+                                    <img className="icon_brand" src={Nike} />
+                                    <img className="icon_brand" src={Adidas} />
+                                    <img className="icon_brand" src={Puma} />
+                                </div>
+                                <div className="inf_desc">
+                                    <div className="inf_block">
+                                        <img className="cloth_icon" src={Box} />
+                                        <p className="cloth_desc">
+                                            Бесплатная доставка
+                                        </p>
+                                    </div>
+                                    <div className="inf_block">
+                                        <img
+                                            className="cloth_icon"
+                                            src={Clothes}
+                                        />
+                                        <p className="cloth_desc">Примерка</p>
+                                    </div>
+                                    <div className="inf_block">
+                                        <img
+                                            className="cloth_icon"
+                                            src={Exch}
+                                        />
+                                        <p className="cloth_desc">
+                                            28 день на возврат
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                        </>
-                    )
-                        :
-                        ''
+                        </div>
+                        <div className="det_description">
+                            <h1>Описание</h1>
+                            <p className="content_desc">
+                                {shoeDetails.description}
+                            </p>
+                        </div>
+                        <div>
+                            <div className="review">
+                                <p className="det_brand">Отзывы и вопросы</p>
+                                <input />
+                                <button>Оставить отзыв</button>
+                            </div>
+                        </div>
+                    </>
+                ) : (
+                    ""
                 )}
             </div>
         </div>
