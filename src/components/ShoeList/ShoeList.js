@@ -30,10 +30,10 @@ const ShoeList = () => {
     }, []);
     return (
         <>
+            {shoesData.map((item) => (
+                <ShoeCard key={item.id} item={item} />
+            ))}
             <Grid container spacing={3}>
-                {shoesData.map((item) => (
-                    <ShoeCard key={item.id} item={item} />
-                ))}
                 <Pagination
                     page={+page}
                     onChange={handlePage}

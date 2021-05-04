@@ -16,6 +16,8 @@ const Header = () => {
     const handleValue = (e) => {
         // setSearchValue(e.target.value);
         search(e.target.value);
+        console.log(e.target.value);
+        console.log(searchData);
     };
 
     return (
@@ -39,8 +41,11 @@ const Header = () => {
                                     {searchData.map((item) => (
                                         <Link to={`/details/${item.id}`}>
                                             <div className="search-item">
-                                                {item.brand}
-                                                {item.model}
+                                                <div>
+                                                    <img src={item.images[0]} />
+                                                </div>
+                                                <div>{item.brand}</div>
+                                                <div>, {item.model}</div>
                                             </div>
                                         </Link>
                                     ))}

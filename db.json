@@ -28,39 +28,49 @@
   ],
   "shoes": [
     {
-      "brand": "",
-      "model": "",
-      "sex": "",
-      "category": "",
+      "brand": "Nike",
+      "model": "jordan 1 mid metallic red",
+      "sex": "Men",
+      "category": "Jordan",
       "description": "",
-      "size": "",
-      "color": "",
-      "price": "",
-      "images": [],
+      "size": "39",
+      "color": "Red",
+      "price": "250",
+      "images": [
+        "https://static.sneakerjagers.com/products/660x660/199138.jpg",
+        "https://images.restocks.net/products/554724-122/air-jordan-1-mid-metallic-red-2-1000.png",
+        "https://images.restocks.net/products/554724-122/air-jordan-1-mid-metallic-red-3-1000.png"
+      ],
       "id": 1
     },
     {
-      "brand": "",
-      "model": "",
-      "sex": "",
-      "category": "",
+      "brand": "Nike",
+      "model": " Jordan 1 Retro High Travis Scott",
+      "sex": "Men",
+      "category": "Jordan",
       "description": "",
-      "size": "",
-      "color": "",
-      "price": "",
-      "images": [],
+      "size": "39",
+      "color": "Green",
+      "price": "750",
+      "images": [
+        "https://cdn.webshopapp.com/shops/292955/files/362332715/air-jordan-1-high-travis-scott.jpg",
+        "https://cdn.shopify.com/s/files/1/0015/1263/6483/products/Jordan_1_Retro_High_Travis_Scott_800x.png?v=1550582178",
+        "https://images.restocks.net/products/CD4487-100/travis-scott-x-air-jordan-1-cactus-jack-90823-4-1000.png"
+      ],
       "id": 2
     },
     {
-      "brand": "",
-      "model": "",
-      "sex": "",
-      "category": "",
-      "description": "",
-      "size": "",
-      "color": "",
-      "price": "",
-      "images": [],
+      "brand": "Nike",
+      "model": "Salamaleikum",
+      "sex": "Men",
+      "category": "Jordan",
+      "description": "ehethhr",
+      "size": "39",
+      "color": "Green",
+      "price": "299",
+      "images": [
+        "https://images.restocks.net/products/CN1084-200/air-jordan-6-retro-travis-scott-1-1000.png"
+      ],
       "id": 3
     },
     {
@@ -74,66 +84,6 @@
       "price": "",
       "images": [],
       "id": 4
-    },
-    {
-      "brand": "",
-      "model": "",
-      "sex": "",
-      "category": "",
-      "description": "",
-      "size": "",
-      "color": "",
-      "price": "",
-      "images": [],
-      "id": 5
-    },
-    {
-      "brand": "",
-      "model": "",
-      "sex": "",
-      "category": "",
-      "description": "",
-      "size": "",
-      "color": "",
-      "price": "",
-      "images": [],
-      "id": 6
-    },
-    {
-      "brand": "",
-      "model": "",
-      "sex": "",
-      "category": "",
-      "description": "",
-      "size": "",
-      "color": "",
-      "price": "",
-      "images": [],
-      "id": 7
-    },
-    {
-      "brand": "",
-      "model": "",
-      "sex": "",
-      "category": "",
-      "description": "",
-      "size": "",
-      "color": "",
-      "price": "",
-      "images": [],
-      "id": 8
-    },
-    {
-      "brand": "",
-      "model": "",
-      "sex": "",
-      "category": "",
-      "description": "",
-      "size": "",
-      "color": "",
-      "price": "",
-      "images": [],
-      "id": 9
     }
   ]
 }

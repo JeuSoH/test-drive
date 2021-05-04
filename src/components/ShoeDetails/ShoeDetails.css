@@ -101,6 +101,7 @@
     font-size: 36px;
     font-weight: bold;
     margin-top: 0;
+    color: #b93935;
 }
 .det_size {
     font-size: 18px;
@@ -145,4 +146,7 @@
 }
 .edit_icon {
     width: 50px;
+}
+.review {
+    margin-bottom: 150px;
 }
