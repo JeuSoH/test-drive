@@ -3,6 +3,7 @@ import Cards from "react-credit-cards";
 import "react-credit-cards/es/styles-compiled.css";
 import { shoesContext } from "../../contexts/shoesContext";
 import { authContext } from "../../contexts/AuthContext";
+import "./card.css";
 
 const Card = () => {
     const { currentUser } = useContext(authContext);

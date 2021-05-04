@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
 import "./Header.css";
 import { authContext } from "../../contexts/AuthContext";
-import Search from "../../assets/img/search.svg";
 import Cart from "../../assets/img/cart.svg";
 import { Link, useHistory } from "react-router-dom";
 import { shoesContext } from "../../contexts/shoesContext";
+import User from "../../assets/img/user.png";
 
 const Header = () => {
     const { currentUser, logoutUser } = useContext(authContext);
@@ -17,9 +17,9 @@ const Header = () => {
     const handleValue = (e) => {
         // setSearchValue(e.target.value);
         if (e.target.value.length > 0) {
-            setShowResult(true)
+            setShowResult(true);
         } else {
-            setShowResult(false)
+            setShowResult(false);
         }
         search(e.target.value);
         console.log(e.target.value);
@@ -36,7 +36,7 @@ const Header = () => {
                                 <Link to="/">Streethead</Link>
                             </p>
                         </div>
-                        <div className="navbar_right">
+                        <div className="navbar_center">
                             <div className="search">
                                 <input
                                     onBlur={() => setShowResult(false)}
@@ -44,37 +44,40 @@ const Header = () => {
                                     className="inp_search"
                                     placeholder="Поиск"
                                 />
-                                {
-                                    show ?
-                                        (
-                                            <div className="search-result">
-                                                {searchData.map((item) => (
-                                                    <Link to={`/details/${item.id}`}>
-                                                        <div className="search-item">
-                                                            <div>
-                                                                <img src={item.images[0]} />
-                                                            </div>
-                                                            <div>{item.brand}</div>
-                                                            <div>, {item.model}</div>
-                                                        </div>
-                                                    </Link>
-                                                ))}
-                                            </div>
-                                        )
-                                        :
-                                        ""
-                                }
+                                {show ? (
+                                    <div className="search-result">
+                                        {searchData.map((item) => (
+                                            <Link to={`/details/${item.id}`}>
+                                                <div className="search-item">
+                                                    <div>
+                                                        <img
+                                                            src={item.images[0]}
+                                                        />
+                                                    </div>
+                                                    <div className="res_search">
+                                                        {item.brand}
+                                                    </div>
+                                                    <div className="res_search">
+                                                        , {item.model}
+                                                    </div>
+                                                </div>
+                                            </Link>
+                                        ))}
+                                    </div>
+                                ) : (
+                                    ""
+                                )}
                             </div>
+                        </div>
+                        <div className="navbar_right">
                             <div
                                 onClick={() => history.push("/cart")}
                                 className="cart"
                             >
                                 <img src={Cart} alt="" />
-                            </div>
-                            <div className="navbar__add-btn">
-                                <p>
-                                    <Link to="/add">Добавить</Link>
-                                </p>
+                                <Link to="/profile" className="settings-btn">
+                                    <img src={User} className="user_icon" />
+                                </Link>
                             </div>
                             {currentUser ? (
                                 <div className="log-in-out-container">
