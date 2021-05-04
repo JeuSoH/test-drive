@@ -1,6 +1,21 @@
+.card__container {
+  padding: 5vh;
+  width: 70%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.plastic-card {
+  margin: 5vh;
+  width: 70vw;
+}
+
 .card__input {
   padding: 0.375rem 0.75rem;
-  font-size: 1rem;
+  font-size: 20px;
   line-height: 1.5;
   color: #495057;
   background-color: #fff;

@@ -21,7 +21,7 @@ const Cart = () => {
                         (
                             cart.shoes.map(elem => (
                                 <div key={elem.id} className="cart__element">
-                                    <img src={elem.images[0]} alt="shoe-photo" />
+                                    <img className="cart__image" src={elem.images[0]} alt="shoe-photo" />
                                     <span>{elem.brand}</span>
                                     <span>Модель: {elem.model}</span>
                                     <span>Цвет: {elem.color}</span>
