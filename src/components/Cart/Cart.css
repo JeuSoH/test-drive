@@ -22,12 +22,15 @@
   padding: 10px;
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
 }
 
-.cart__element img {
+.cart__image {
+  object-fit: contain;
   height: 70px;
+  width: 10vw;
 }
 
 .cart__element span {

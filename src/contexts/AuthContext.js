@@ -9,12 +9,15 @@ export const authContext = React.createContext();
 
 const INIT_STATE = {
     isAuth: false,
+    currentUser: null
 }
 
 const reducer = (state = INIT_STATE, action) => {
     switch (action.type) {
-        case ".":
+        case "GET_CURRENT_USER":
             return {
+                ...state,
+                currentUser: action.payload
             }
         default:
             return state
@@ -53,6 +56,10 @@ const AuthContextProvider = ({ children }) => {
                 .signInWithEmailAndPassword(userData.email, userData.password);
             setCurrentUser(newUser.user)
             console.log(currentUser);
+            dispatch({
+                type: "GET_CURRENT_USER",
+                payload: currentUser
+            });
             history.push('/')
         } catch (err) {
             console.log(err);
@@ -63,6 +70,10 @@ const AuthContextProvider = ({ children }) => {
         try {
             await app.auth().signOut();
             console.log('User Logged Out!');
+            dispatch({
+                type: "GET_CURRENT_USER",
+                payload: null
+            });
         } catch (err) {
             console.log('err:', err);
         }
@@ -70,7 +81,7 @@ const AuthContextProvider = ({ children }) => {
 
     return (
         <authContext.Provider value={{
-            currentUser,
+            currentUser: state.currentUser,
             registerUser,
             loginUser,
             logoutUser

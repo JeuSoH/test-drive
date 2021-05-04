@@ -42,6 +42,7 @@
 }
 
 .log-in-out {
+  cursor: pointer;
   background-color: black;
   color: white;
   border-radius: 30px;

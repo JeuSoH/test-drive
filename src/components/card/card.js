@@ -1,10 +1,19 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Cards from 'react-credit-cards'
 import './Card.css'
 import 'react-credit-cards/es/styles-compiled.css'
+import { shoesContext } from '../../contexts/shoesContext';
+import { authContext } from '../../contexts/AuthContext';
 
 
 const Card = () => {
+
+    const { currentUser } = useContext(authContext);
+    const { cart, getCart } = useContext(shoesContext);
+
+    useEffect(() => {
+        getCart();
+    }, []);
 
     const [number, setNumber] = useState('')
     const [name, setName] = useState('')
@@ -12,56 +21,67 @@ const Card = () => {
     const [cvc, setCvc] = useState('')
     const [focus, setFocus] = useState('')
 
-    return (
-        <div className="plastic-card">
-            <Cards
-                number={number}
-                name={name}
-                expiry={expiry}
-                cvc={cvc}
-                focused={focus}
-            />
-            <form className="card__inputs">
-                <input
-                    className="card__input"
-                    type='tel'
-                    name='number'
-                    placeholder='Card Number'
-                    value={number}
-                    onChange={e => setNumber(e.target.value)}
-                    onFocus={e => setFocus(e.target.name)}
+    return currentUser ? (
+        <div className="card__container">
+            <span>Заполните поля</span>
+            {/* <span>{currentUser.ba.email}</span> */}
+            <span>Итого к оплате: {cart.totalPrice} сом</span>
+            <div className="plastic-card">
+                <Cards
+                    number={number}
+                    name={name}
+                    expiry={expiry}
+                    cvc={cvc}
+                    focused={focus}
                 />
-                <input
-                    className="card__input"
-                    type='text'
-                    name='name'
-                    placeholder='Name'
-                    value={name}
-                    onChange={e => setName(e.target.value)}
-                    onFocus={e => setFocus(e.target.name)}
-                />
-                <input
-                    className="card__input"
-                    type='tel   '
-                    name='expiry'
-                    placeholder='MM/YY'
-                    value={expiry}
-                    onChange={e => setExpiry(e.target.value)}
-                    onFocus={e => setFocus(e.target.name)}
-                />
-                <input
-                    className="card__input"
-                    type='tel'
-                    name='cvc'
-                    placeholder='CVC'
-                    value={cvc}
-                    onChange={e => setCvc(e.target.value)}
-                    onFocus={e => setFocus(e.target.name)}
-                />
-                <button className="card__btn">Buy</button>
-            </form>
+                <form className="card__inputs">
+                    <input
+                        className="card__input"
+                        type='number'
+                        name='number'
+                        placeholder='Card Number'
+                        value={number.slice(0, 16)}
+                        onChange={e => setNumber(e.target.value)}
+                        onFocus={e => setFocus(e.target.name)}
+                    />
+                    <input
+                        className="card__input"
+                        type='text'
+                        name='name'
+                        placeholder='Name'
+                        value={name}
+                        onChange={e => setName(e.target.value)}
+                        onFocus={e => setFocus(e.target.name)}
+                    />
+                    <input
+                        className="card__input"
+                        type='tel   '
+                        name='expiry'
+                        placeholder='MM/YY'
+                        value={expiry.slice(0, 3)}
+                        onChange={e => setExpiry(e.target.value)}
+                        onFocus={e => setFocus(e.target.name)}
+                    />
+                    <input
+                        className="card__input"
+                        type='tel'
+                        name='cvc'
+                        placeholder='CVC'
+                        value={cvc.slice(0, 3)}
+                        onChange={e => setCvc(e.target.value)}
+                        onFocus={e => setFocus(e.target.name)}
+                    />
+                    <button className="card__btn">Buy</button>
+                </form>
+            </div>
         </div>
-    );
+    )
+        :
+        (
+            <div className="cart__container">
+                <span style={{ minHeight: "60vh", display: "flex", justifyContent: "center", alignItems: "center" }}>Требуется авторизация для оплаты</span>
+            </div>
+        );
 };
 
 export default Card;

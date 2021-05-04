@@ -4,6 +4,7 @@
   margin: auto;
   border: 1px gray solid;
   border-radius: 5px;
+  border: dotted;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,10 +16,13 @@
   width: 95%;
   text-align: center;
   border-bottom: 1px gray solid;
+  border-bottom: dotted;
 }
 
 .order-form__elem {
   background-color: gray;
+  margin-top: 5vh;
+  padding: 2vh;
   width: 100%;
   font-size: 18px;
   display: flex;
@@ -38,22 +42,18 @@
 }
 
 .pay-btn {
-  text-decoration: none;
-}
-
-.pay-btn span {
-  font-size: 18px;
-  text-decoration: none;
+  cursor: pointer;
+  font-size: 18px !important;
+  text-decoration: none !important;
   background-color: blue;
-  color: white;
-  margin: auto;
-  padding: 2vh;
+  color: white !important;
   transition: 300ms;
   border-radius: 5px;
+  padding: 2vh !important;
+  margin: 5vh !important;
 }
 
-.pay-btn span:hover {
+.pay-btn:hover {
   background-color: rgb(47, 47, 99);
-  color: white;
   text-decoration: none;
 }
