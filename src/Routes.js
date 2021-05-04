@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import AddShoes from "./components/AddShoes/AddShoes";
 import Header from "./components/Header/Header";
-import Card from "./components/Card/Card";
+import Card from "./components/Card/card";
 import Home from "./components/Home/Home";
 import SignIn from "./components/SignIn/SignIn";
 import SignUp from "./components/SignUp/SignUp";
@@ -38,8 +38,16 @@ const Routes = () => {
                                 component={ShoeDetails}
                             />
                             <Route exact path="/admin" component={AdminPanel} />
-                            <Route exact path="/edit/:id" component={EditShoe} />
-                            <Route exact path="/order-form" component={OrderForm} />
+                            <Route
+                                exact
+                                path="/edit/:id"
+                                component={EditShoe}
+                            />
+                            <Route
+                                exact
+                                path="/order-form"
+                                component={OrderForm}
+                            />
                             <Route
                                 exact
                                 path="/edit/:id"
