@@ -31,7 +31,7 @@ const AuthContextProvider = ({ children }) => {
 
     useEffect(() => {
         app.auth().onAuthStateChanged((user) => {
-            setCurrentUser(user)
+            setCurrentUser(user);
             console.log(user);
         });
     }, []);

@@ -8,7 +8,8 @@ export const usersContext = React.createContext();
 
 const INIT_STATE = {
     isAuth: false,
-    orders: []
+    orders: [],
+    userData: {}
 }
 
 const reducer = (state = INIT_STATE, action) => {
@@ -22,6 +23,11 @@ const reducer = (state = INIT_STATE, action) => {
             return {
                 ...state,
                 orders: action.payload
+            }
+        case "GET_USER_DATA":
+            return {
+                ...state,
+                userData: action.payload
             }
         default:
             return state
@@ -40,23 +46,43 @@ const UsersContextProvider = ({ children }) => {
         })
     }
 
-    async function submitShop(sum) {
+    async function getUserData() {
+        let { data } = await axios.get(DB_JSON);
+        console.log(data);
+        dispatch({
+            type: "GET_USER_DATA",
+            payload: data
+        })
+    }
+
+    async function submitShop(sum, history) {
         let { data } = await axios.get(DB_JSON);
 
         let today = new Date();
         let dd = String(today.getDate()).padStart(2, '0');
         let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
         let yyyy = today.getFullYear();
+        today = mm + '/' + dd + '/' + yyyy;
 
         data.orders.push({
             id: Date.now(),
             total: sum,
-            orderDate: today.splice(0, 10),
+            orderDate: today,
             status: "Обработка"
         });
 
         await axios.post(DB_JSON, data);
+        localStorage.getItem("streetHeadShoes", JSON.stringify({
+            shoes: [],
+            totalPrice: 0,
+        }));
         getUserOrders();
+        history.push("/")
+    }
+
+    async function editUserData(userData) {
+        await axios.patch(DB_JSON, userData);
+        getUserData();
     }
 
     const cookies = new Cookies();
@@ -65,8 +91,11 @@ const UsersContextProvider = ({ children }) => {
         <usersContext.Provider value={{
             isAuth: state.isAuth,
             orders: state.orders,
+            userData: state.userData,
             getUserOrders,
-            submitShop
+            getUserData,
+            submitShop,
+            editUserData
 
         }}>
             {children}
