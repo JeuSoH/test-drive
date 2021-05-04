@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import { useHistory } from 'react-router';
+import { Link } from 'react-router-dom';
 import { authContext } from '../../contexts/AuthContext';
 import { shoesContext } from '../../contexts/shoesContext';
 import './AdminPanel.css'
@@ -19,6 +20,7 @@ const AdminPanel = () => {
 
     return currentUser ? (
         <div className="admin-wrapper">
+            <Link className="add-product-btn" to="/add"><span>Добавить товар</span></Link>
             {
                 shoesData.map(elem => (
                     <div key={elem.id} className="admin-pannel__element">
