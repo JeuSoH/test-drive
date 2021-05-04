@@ -12,9 +12,15 @@ const Header = () => {
 
     const { search, searchData } = useContext(shoesContext);
     const { searchValue, setSearchValue } = useState("");
+    const [show, setShowResult] = useState(false);
 
     const handleValue = (e) => {
         // setSearchValue(e.target.value);
+        if (e.target.value.length > 0) {
+            setShowResult(true)
+        } else {
+            setShowResult(false)
+        }
         search(e.target.value);
         console.log(e.target.value);
         console.log(searchData);
@@ -33,23 +39,31 @@ const Header = () => {
                         <div className="navbar_right">
                             <div className="search">
                                 <input
+                                    onBlur={() => setShowResult(false)}
                                     onChange={handleValue}
                                     className="inp_search"
                                     placeholder="Поиск"
                                 />
-                                <div className="search-result">
-                                    {searchData.map((item) => (
-                                        <Link to={`/details/${item.id}`}>
-                                            <div className="search-item">
-                                                <div>
-                                                    <img src={item.images[0]} />
-                                                </div>
-                                                <div>{item.brand}</div>
-                                                <div>, {item.model}</div>
+                                {
+                                    show ?
+                                        (
+                                            <div className="search-result">
+                                                {searchData.map((item) => (
+                                                    <Link to={`/details/${item.id}`}>
+                                                        <div className="search-item">
+                                                            <div>
+                                                                <img src={item.images[0]} />
+                                                            </div>
+                                                            <div>{item.brand}</div>
+                                                            <div>, {item.model}</div>
+                                                        </div>
+                                                    </Link>
+                                                ))}
                                             </div>
-                                        </Link>
-                                    ))}
-                                </div>
+                                        )
+                                        :
+                                        ""
+                                }
                             </div>
                             <div
                                 onClick={() => history.push("/cart")}

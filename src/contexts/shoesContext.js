@@ -150,7 +150,7 @@ const ShoesContextProvider = ({ children }) => {
 
     async function search(value) {
         let { data } = await axios.get(
-            `http://localhost:8000/shoes?q=${value}&_limit=6`
+            `http://localhost:8000/shoes?q=${value}`
         );
         dispatch({
             type: "SEARCH",

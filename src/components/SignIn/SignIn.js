@@ -23,7 +23,7 @@ const SignIn = () => {
             <div className="wrapper fadeInDown">
                 <div id="formContent">
                     <h2 className="sign-in-btn active"> Sign In </h2>
-                    <Link to="register"><h2 className="sign-up-btn inactive underlineHover">Sign Up </h2></Link>
+                    <Link to="/register"><h2 className="sign-up-btn inactive underlineHover">Sign Up </h2></Link>
 
                     <div className="fadeIn first">
                         <ExitToAppIcon />
