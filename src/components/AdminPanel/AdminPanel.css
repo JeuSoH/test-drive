@@ -41,6 +41,21 @@
   color: white;
 }
 
+.add-product-btn {
+  padding: 2vh 5vh;
+  font-size: 20px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  transition: 300ms;
+}
+
+.add-product-btn:hover {
+  background-color: rgb(58, 54, 54);
+}
+
 .admin-pannel__element {
   border: 2px black solid;
   margin: 5px;
@@ -68,15 +83,6 @@
 .admin-pannel__element span::after {
   content: "|";
   margin-left: 5px;
-}
-
-.admin-pannel__total-price {
-  margin-top: 20px;
-}
-
-.admin-pannel__shoes-count {
-  width: 70px;
-  font-size: 20px;
 }
 
 .admin-pannel__delete-btn {
