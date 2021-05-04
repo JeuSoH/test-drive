@@ -27,7 +27,7 @@ const Profile = () => {
                             {elem.id}
                         </div>
                         <div className="col col-2" data-label="Customer Name">
-                            {elem.orderData}
+                            {elem.orderDate}
                         </div>
                         <div className="col col-3" data-label="Amount">
                             {elem.total}

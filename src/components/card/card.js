@@ -3,21 +3,24 @@ import Cards from "react-credit-cards";
 import "react-credit-cards/es/styles-compiled.css";
 import { shoesContext } from "../../contexts/shoesContext";
 import { authContext } from "../../contexts/AuthContext";
-import "./card.css";
+import "./Card.css";
+import { usersContext } from "../../contexts/UsersContext";
 
 const Card = () => {
     const { currentUser } = useContext(authContext);
     const { cart, getCart } = useContext(shoesContext);
+    const { submitShop } = useContext(usersContext);
 
     useEffect(() => {
         getCart();
     }, []);
 
-    const [number, setNumber] = useState("");
-    const [name, setName] = useState("");
-    const [expiry, setExpiry] = useState("");
-    const [cvc, setCvc] = useState("");
-    const [focus, setFocus] = useState("");
+    console.log(currentUser);
+    const [number, setNumber] = useState('')
+    const [name, setName] = useState('')
+    const [expiry, setExpiry] = useState('')
+    const [cvc, setCvc] = useState('')
+    const [focus, setFocus] = useState('')
 
     return currentUser ? (
         <div className="card__container">
@@ -69,7 +72,7 @@ const Card = () => {
                         onChange={(e) => setCvc(e.target.value)}
                         onFocus={(e) => setFocus(e.target.name)}
                     />
-                    <button className="card__btn">Buy</button>
+                    <button onClick={() => submitShop(cart.totalPrice)} className="card__btn">Оплатить</button>
                 </form>
             </div>
         </div>

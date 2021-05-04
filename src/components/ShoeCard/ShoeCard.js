@@ -17,16 +17,6 @@ const ShoeCard = ({ item }) => {
                     <div className="card_desc_brand">
                         <p className="card_brand">{item.brand}</p>
                         <p className="card_model">{item.model}</p>
-                        <img
-                            style={{
-                                backgroundColor: checkShoeInCart(item.id)
-                                    ? "gray"
-                                    : "white",
-                            }}
-                            onClick={() => addToCart(item)}
-                            className="icon_card"
-                            src={Basket}
-                        />
                         <img style={{ backgroundColor: checkShoeInCart(item.id) ? "gray" : "white" }} onClick={() => addToCart(item)} className="icon_card" src={Basket} />
                     </div>
                     <div className="block_price">

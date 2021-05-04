@@ -36,8 +36,27 @@ const UsersContextProvider = ({ children }) => {
         console.log(data);
         dispatch({
             type: "GET_USER_ORDERS",
-            payload: data[0].orders
+            payload: data.orders
         })
+    }
+
+    async function submitShop(sum) {
+        let { data } = await axios.get(DB_JSON);
+
+        let today = new Date();
+        let dd = String(today.getDate()).padStart(2, '0');
+        let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        let yyyy = today.getFullYear();
+
+        data.orders.push({
+            id: Date.now(),
+            total: sum,
+            orderDate: today.splice(0, 10),
+            status: "Обработка"
+        });
+
+        await axios.post(DB_JSON, data);
+        getUserOrders();
     }
 
     const cookies = new Cookies();
@@ -46,7 +65,8 @@ const UsersContextProvider = ({ children }) => {
         <usersContext.Provider value={{
             isAuth: state.isAuth,
             orders: state.orders,
-            getUserOrders
+            getUserOrders,
+            submitShop
 
         }}>
             {children}

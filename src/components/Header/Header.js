@@ -75,10 +75,10 @@ const Header = () => {
                                 className="cart"
                             >
                                 <img src={Cart} alt="" />
-                                <Link to="/profile" className="settings-btn">
-                                    <img src={User} className="user_icon" />
-                                </Link>
                             </div>
+                            <Link to="/profile" className="settings-btn">
+                                <img src={User} className="user_icon" />
+                            </Link>
                             {currentUser ? (
                                 <div className="log-in-out-container">
                                     <p
