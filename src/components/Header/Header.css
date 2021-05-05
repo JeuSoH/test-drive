@@ -14,9 +14,11 @@
   display: flex;
   justify-content: space-between;
   height: 10vh;
+  align-items: center;
 }
 .navbar_right {
   display: flex;
+  align-items: center;
 }
 
 .navbar__add-btn {
