@@ -3,7 +3,7 @@ import Cards from "react-credit-cards";
 import "react-credit-cards/es/styles-compiled.css";
 import { shoesContext } from "../../contexts/shoesContext";
 import { authContext } from "../../contexts/AuthContext";
-import "./Card.css";
+import "./card.css";
 import { usersContext } from "../../contexts/UsersContext";
 import { useHistory } from "react-router";
 
@@ -33,7 +33,7 @@ const Card = () => {
         <div className="card__container">
             <span>Заполните поля</span>
             {/* <span>{currentUser.ba.email}</span> */}
-            <span>Итого к оплате: {cart.totalPrice} сом</span>
+            <span>Итого к оплате: {cart.totalPrice} $</span>
             <div className="plastic-card">
                 <Cards
                     number={number}

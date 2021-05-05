@@ -1,77 +1,250 @@
 .title {
-  transform: rotate(-90deg);
-  position: absolute;
-  top: 350px;
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 350px;
 }
 .discover {
-  font-size: 50px;
-  font-weight: bold;
+    font-size: 50px;
+    font-weight: bold;
 }
 .new {
-  text-align: center;
+    text-align: center;
 }
 .welcome_blocks {
-  display: flex;
-  margin-left: 250px;
+    display: flex;
+    margin-left: 250px;
 }
 .block_1 {
-  width: 300px;
-  height: 700px;
-  background-color: #cf9032;
-  margin-top: 100px;
-  border-radius: 35px 35px 0 0;
+    width: 300px;
+    height: 700px;
+    background-color: #cf9032;
+    margin-top: 100px;
+    border-radius: 35px 35px 0 0;
 }
 .block_2 {
-  width: 300px;
-  height: 600px;
-  background-color: #23217d;
-  margin-top: 200px;
-  margin-left: 80px;
-  border-radius: 35px 35px 0 0;
+    width: 300px;
+    height: 600px;
+    background-color: #23217d;
+    margin-top: 200px;
+    margin-left: 80px;
+    border-radius: 35px 35px 0 0;
 }
 .number {
-  font-family: "Anton", sans-serif;
-  color: white;
-  text-align: center;
-  font-size: 70px;
-  margin-top: 0;
+    font-family: "Anton", sans-serif;
+    color: white;
+    text-align: center;
+    font-size: 70px;
+    margin-top: 0;
 }
 .shoes_1 {
-  position: absolute;
-  top: 280px;
-  left: 520px;
+    position: absolute;
+    top: 250px;
+    left: 575px;
 }
 .shoes_2 {
-  position: absolute;
-  top: 260px;
-  right: 660px;
+    position: absolute;
+    top: 170px;
+    right: 725px;
 }
 .name_shoes_1 {
-  padding-top: 330px;
-  color: white;
-  font-family: "Anton", sans-serif;
-  text-align: center;
+    padding-top: 330px;
+    color: white;
+    font-family: "Anton", sans-serif;
+    text-align: center;
 }
 .name_shoes_2 {
-  padding-top: 280px;
-  color: white;
-  font-family: "Anton", sans-serif;
-  text-align: center;
+    padding-top: 280px;
+    color: white;
+    font-family: "Anton", sans-serif;
+    text-align: center;
 }
 .social {
-  display: flex;
-  align-items: flex-end;
-  font-size: 20px;
-  font-weight: bold;
-  width: 50px;
+    display: flex;
+    align-items: flex-end;
+    font-size: 20px;
+    font-weight: bold;
+    width: 50px;
 }
 .brand {
-  display: flex;
-  flex-wrap: wrap;
-  width: 85px;
-  align-content: center;
-  margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 85px;
+    align-content: center;
+    margin: 0 auto;
 }
 .icon {
-  margin-left: 25px;
+    margin-left: 25px;
+}
+@media all and (max-width: 1100px) {
+    .shoes_2 {
+        right: 475px;
+        top: 270px;
+    }
+    .shoes_1 {
+        top: 220px;
+        left: 430px;
+    }
+    .footer {
+        width: 110%;
+    }
+}
+@media all and (max-width: 1024px) {
+    .shoes_2 {
+        right: 410px;
+        top: 270px;
+    }
+    .shoes_1 {
+        top: 330px;
+        left: 435px;
+    }
+
+    .settings-btn {
+        margin: 1vh 3vh;
+    }
+
+    .footer {
+        width: 118%;
+    }
+}
+
+@media all and (max-width: 900px) {
+    .shoes_2 {
+        right: 280px;
+    }
+    .shoes_1 {
+        top: 245px;
+        left: 440px;
+    }
+
+    .footer {
+        width: 135%;
+    }
+}
+@media all and (max-width: 850px) {
+    .shoes_2 {
+        right: 245px;
+    }
+    .shoes_1 {
+        top: 300px;
+        left: 440px;
+    }
+
+    .footer {
+        width: 142%;
+    }
+}
+@media all and (max-width: 768px) {
+    .shoes_2 {
+        right: 145px;
+    }
+    .shoes_1 {
+        top: 300px;
+        left: 440px;
+    }
+
+    .footer {
+        width: 158%;
+    }
+}
+@media all and (max-width: 700px) {
+    .shoes_2 {
+        right: 80px;
+        top: 190px;
+    }
+    .shoes_1 {
+        top: 250px;
+    }
+    .footer {
+        width: 173%;
+    }
+}
+@media all and (max-width: 600px) {
+    .shoes_2 {
+        right: -15px;
+        top: 190px;
+    }
+    .shoes_1 {
+        top: 250px;
+    }
+    .footer {
+        width: 200%;
+    }
+}
+@media all and (max-width: 540px) {
+    .shoes_2 {
+        right: -75px;
+    }
+    .footer {
+        width: 224%;
+    }
+}
+@media all and (max-width: 450px) {
+    .shoes_2 {
+        right: -165px;
+    }
+    .shoes_1 {
+        top: 275px;
+        left: 425px;
+    }
+    .footer {
+        width: 270%;
+    }
+}
+@media all and (max-width: 414px) {
+    .shoes_2 {
+        right: -200px;
+    }
+    .shoes_1 {
+        top: 275px;
+        left: 425px;
+    }
+    .footer {
+        width: 300%;
+    }
+}
+@media all and (max-width: 411px) {
+    .shoes_2 {
+        right: -200px;
+    }
+    .shoes_1 {
+        top: 275px;
+        left: 425px;
+    }
+    .footer {
+        width: 295%;
+    }
+}
+@media all and (max-width: 375px) {
+    .shoes_2 {
+        right: -235px;
+    }
+    .footer {
+        width: 320%;
+    }
+}
+@media all and (max-width: 360px) {
+    .shoes_2 {
+        right: -260px;
+    }
+    .shoes_1 {
+        top: 260px;
+        left: 440px;
+    }
+    .footer {
+        width: 335%;
+    }
+}
+
+@media all and (max-width: 320px) {
+    .shoes_2 {
+        right: -300px;
+    }
+    .footer {
+        width: 380%;
+    }
+}
+@media all and (max-width: 280px) {
+    .footer {
+        width: 430%;
+    }
 }

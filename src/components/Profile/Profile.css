@@ -109,3 +109,75 @@
     text-align: center;
     flex-basis: 25%;
 }
+@media all and (max-width: 1024px) {
+    .profile {
+        width: 118%;
+        padding: 100px 60px 975px 68px;
+    }
+    .responsive-table .table-header {
+        margin-top: 120px;
+    }
+}
+@media all and (max-width: 768px) {
+    .profile {
+        width: 158%;
+        padding: 100px 60px 975px 68px;
+    }
+    .responsive-table .table-header {
+        margin-top: 120px;
+    }
+}
+@media all and (max-width: 540px) {
+    .profile {
+        width: 224%;
+        padding: 100px 60px 975px 68px;
+    }
+    .responsive-table .table-header {
+        margin-top: 120px;
+    }
+}
+@media all and (max-width: 414px) {
+    .profile {
+        width: 295%;
+        padding: 100px 60px 975px 68px;
+    }
+    .responsive-table .table-header {
+        margin-top: 120px;
+    }
+}
+@media all and (max-width: 375px) {
+    .profile {
+        width: 320%;
+        padding: 100px 60px 975px 68px;
+    }
+    .responsive-table .table-header {
+        margin-top: 120px;
+    }
+}
+@media all and (max-width: 360px) {
+    .profile {
+        width: 335%;
+        padding: 100px 60px 975px 68px;
+    }
+    .responsive-table .table-header {
+        margin-top: 120px;
+    }
+}
+@media all and (max-width: 320px) {
+    .profile {
+        width: 380%;
+        padding: 100px 60px 975px 68px;
+    }
+    .responsive-table .table-header {
+        margin-top: 120px;
+    }
+}
+@media all and (max-width: 280px) {
+    .profile {
+        width: 430%;
+        padding: 100px 60px 975px 68px;
+    }
+    .responsive-table .table-header {
+        margin-top: 120px;
+    }
+}

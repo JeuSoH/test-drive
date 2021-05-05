@@ -1,3 +1,8 @@
 .foot_sh {
+    margin-left: 100px;
+    font-weight: bold;
+}
+.cat_content {
+    display: flex;
     margin-top: 50px;
 }
