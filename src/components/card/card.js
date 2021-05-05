@@ -3,7 +3,7 @@ import Cards from "react-credit-cards";
 import "react-credit-cards/es/styles-compiled.css";
 import { shoesContext } from "../../contexts/shoesContext";
 import { authContext } from "../../contexts/AuthContext";
-import "./card.css";
+import "./Card.css";
 import { usersContext } from "../../contexts/UsersContext";
 import { useHistory } from "react-router";
 

@@ -26,7 +26,7 @@ const reducer = (state = INIT_STATE, action) => {
                     action.payload.headers["x-total-count"] / 6
                 ),
             };
-        case "GET_SHOES_DETAILS":
+        case "GET_SHOE_DETAILS":
             return { ...state, shoeDetails: action.payload };
         case "GET_CART":
             return { ...state, cart: action.payload };
@@ -66,9 +66,10 @@ const ShoesContextProvider = ({ children }) => {
     async function getShoeDetails(id) {
         let { data } = await axios.get(`http://localhost:8000/shoes/${id}`);
         dispatch({
-            type: "GET_SHOES_DETAILS",
+            type: "GET_SHOE_DETAILS",
             payload: data,
         });
+        console.log(data, ' in context getShoedetails');
     }
     async function saveShoe(id, newShoe) {
         await axios.patch(`http://localhost:8000/shoes/${id}`, newShoe);

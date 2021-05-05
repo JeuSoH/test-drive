@@ -10,13 +10,16 @@
   width: 1200px;
   margin: 0 auto;
 }
+
 .navbar {
   display: flex;
   justify-content: space-between;
   height: 10vh;
+  align-items: center;
 }
 .navbar_right {
   display: flex;
+  align-items: center;
 }
 
 .navbar__add-btn {
@@ -43,13 +46,12 @@
 }
 
 .log-in-out {
+  margin: auto;
   cursor: pointer;
   background-color: black;
   color: white;
   border-radius: 30px;
   border-style: none;
-  margin-top: 20px;
-  margin-left: 20px;
   padding: 2vh 3vh;
   font-size: 18px;
   display: flex;
@@ -57,6 +59,8 @@
   align-items: center;
 }
 a {
+  display: flex;
+  align-items: center;
   text-decoration: none;
   color: black;
 }
