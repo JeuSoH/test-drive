@@ -27,6 +27,7 @@ const ShoeList = () => {
 
     useEffect(() => {
         getShoes(history);
+        setPage(getPage(history))
     }, []);
     return (
         <>

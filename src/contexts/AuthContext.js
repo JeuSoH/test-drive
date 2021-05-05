@@ -9,7 +9,7 @@ export const authContext = React.createContext();
 
 const INIT_STATE = {
     isAuth: false,
-    currentUser: null
+    currentUser: null,
 }
 
 const reducer = (state = INIT_STATE, action) => {
@@ -32,6 +32,10 @@ const AuthContextProvider = ({ children }) => {
     useEffect(() => {
         app.auth().onAuthStateChanged((user) => {
             setCurrentUser(user);
+            dispatch({
+                type: "GET_CURRENT_USER",
+                payload: user
+            })
             console.log(user);
         });
     }, []);
