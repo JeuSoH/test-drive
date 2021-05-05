@@ -9,7 +9,7 @@ export const authContext = React.createContext();
 
 const INIT_STATE = {
     isAuth: false,
-    currentUser: null
+    currentUser: null,
 }
 
 const reducer = (state = INIT_STATE, action) => {

@@ -19,7 +19,7 @@ const AdminPanel = () => {
             console.log(user);
             if (!user) {
                 history.push("/login");
-            } else {
+            } else if (shoesData) {
                 setPending(false)
             }
         });

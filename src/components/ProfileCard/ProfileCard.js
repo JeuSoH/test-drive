@@ -1,3 +1,4 @@
+import { CircularProgress } from '@material-ui/core';
 import React, { useContext, useEffect, useState } from 'react';
 import { usersContext } from '../../contexts/UsersContext';
 import './ProfileCard.css'
@@ -11,7 +12,7 @@ const ProfileCard = () => {
     useEffect(() => {
         getUserData();
         setUserDataToEdit(userData);
-    }, []);
+    }, [edit]);
 
     function handleChange(event) {
         setUserDataToEdit({
@@ -33,13 +34,19 @@ const ProfileCard = () => {
             {
                 edit ?
                     (
-                        <>
-                            <input className="edit-inputs" name="firstName" onChange={handleChange} placeholder="Имя" value={userDataToEdit.firstName} />
-                            <input className="edit-inputs" name="lastName" onChange={handleChange} placeholder="Фамилия" value={userDataToEdit.lastName} />
-                            <input className="edit-inputs" name="address" onChange={handleChange} placeholder="Адрес доставки" value={userDataToEdit.address} />
-                            <input className="edit-inputs" name="image" onChange={handleChange} placeholder="Фото" value={userDataToEdit.image} />
-                            <button className="log-in-out" onClick={handleSaveBtn}>Сохранить</button>
-                        </>
+                        userDataToEdit ? (
+                            <>
+                                <input className="edit-inputs" name="firstName" onChange={handleChange} placeholder="Имя" value={userDataToEdit.firstName} />
+                                <input className="edit-inputs" name="lastName" onChange={handleChange} placeholder="Фамилия" value={userDataToEdit.lastName} />
+                                <input className="edit-inputs" name="address" onChange={handleChange} placeholder="Адрес доставки" value={userDataToEdit.address} />
+                                <input className="edit-inputs" name="image" onChange={handleChange} placeholder="Фото" value={userDataToEdit.image} />
+                                <button className="log-in-out" onClick={handleSaveBtn}>Сохранить</button>
+                            </>
+                        )
+                            :
+                            (
+                                <CircularProgress />
+                            )
                     )
                     :
                     (

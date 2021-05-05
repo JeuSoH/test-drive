@@ -1,12 +1,14 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import './SignIn.css';
 
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { Link, useHistory } from 'react-router-dom';
 import { authContext } from '../../contexts/AuthContext';
+import { CircularProgress } from '@material-ui/core';
 
 const SignIn = () => {
     const { currentUser, loginUser, logoutUser } = useContext(authContext);
+    const [pending, setPending] = useState(false);
     const history = useHistory();
 
     let userData = {}
@@ -18,7 +20,12 @@ const SignIn = () => {
         }
     }
 
-    return (
+    function handleSubmit(event) {
+        loginUser(event, userData, history);
+        setPending(true);
+    }
+
+    return !pending ? (
         <div className="sign-in__background">
             <div className="wrapper fadeInDown">
                 <div id="formContent">
@@ -29,7 +36,7 @@ const SignIn = () => {
                         <ExitToAppIcon />
                     </div>
 
-                    <form onSubmit={(event) => loginUser(event, userData, history)}>
+                    <form onSubmit={handleSubmit}>
                         <input onChange={handleInputChanges} type="text" id="login" className="sign-in-up-input fadeIn second" name="email" placeholder="email" />
                         <input onChange={handleInputChanges} type="text" id="password" className="sign-in-up-input fadeIn third" name="password" placeholder="password" />
                         <input type="submit" className="fadeIn fourth" value="Log In" />
@@ -41,7 +48,15 @@ const SignIn = () => {
                 </div>
             </div>
         </div>
-    );
+    )
+        :
+        (
+            <div className="sign-in__background">
+                <div className="wrapper fadeInDown">
+                    <CircularProgress color="primary" />
+                </div>
+            </div>
+        );
 };
 
 export default SignIn;

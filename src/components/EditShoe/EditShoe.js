@@ -4,16 +4,31 @@ import { CircularProgress } from '@material-ui/core';
 import { useHistory, useParams } from 'react-router';
 import { shoesContext } from '../../contexts/shoesContext';
 import ShoeDetails from '../ShoeDetails/ShoeDetails';
+import app from '../../base';
 
 const EditShoe = () => {
 
     const { getShoeDetails, saveShoe, shoeDetails } = useContext(shoesContext);
     const [editedShoe, setEditedShoe] = useState({});
+    const [pending, setPending] = useState(true);
     const history = useHistory();
     const { id } = useParams();
 
+    const [test, setTest] = useState(shoeDetails)
+
     useEffect(() => {
+        console.log('asd')
         getShoeDetails(id);
+        app.auth().onAuthStateChanged((user) => {
+            console.log('authstatechanged')
+            if (!user) {
+                history.push("/login");
+            } else if (shoeDetails) {
+
+                setPending(false);
+                console.log(shoeDetails);
+            }
+        });
     }, []);
 
     const handleValue = (e) => {
@@ -30,34 +45,19 @@ const EditShoe = () => {
         history.push("/admin");
     };
 
-    return ShoeDetails ? (
+
+    return !pending ? (
         <div className="details_card">
             <div className="container"></div>
             <div className="edit-textareas">
-                <textarea name="brand" onChange={handleValue}>
-                    {shoeDetails.brand}
-                </textarea>
-                <textarea name="category" onChange={handleValue}>
-                    {shoeDetails.category}
-                </textarea>
-                <textarea name="model" onChange={handleValue}>
-                    {shoeDetails.model}
-                </textarea>
-                <textarea name="sex" onChange={handleValue}>
-                    {shoeDetails.sex}
-                </textarea>
-                <textarea name="description" onChange={handleValue}>
-                    {shoeDetails.description}
-                </textarea>
-                <textarea name="size" onChange={handleValue}>
-                    {shoeDetails.size}
-                </textarea>
-                <textarea name="color" onChange={handleValue}>
-                    {shoeDetails.color}
-                </textarea>
-                <textarea name="price" onChange={handleValue}>
-                    {shoeDetails.price}
-                </textarea>
+                <textarea value={shoeDetails.brand} name="brand" onChange={handleValue} />
+                <textarea value={shoeDetails.category} name="category" onChange={handleValue} />
+                <textarea value={shoeDetails.model} name="model" onChange={handleValue} />
+                <textarea value={shoeDetails.sex} name="sex" onChange={handleValue} />
+                <textarea value={shoeDetails.description} name="description" onChange={handleValue} />
+                <textarea value={shoeDetails.size} name="size" onChange={handleValue} />
+                <textarea value={shoeDetails.color} name="color" onChange={handleValue} />
+                <textarea value={shoeDetails.price} name="price" onChange={handleValue} />
                 <button className="edit__btn" onClick={handleSave}>Сохранить</button>
             </div>
         </div>
