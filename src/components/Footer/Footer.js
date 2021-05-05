@@ -3,8 +3,7 @@ import "./Footer.css";
 import Ms from "../../assets/img/mastercard.png";
 import Visa from "../../assets/img/visa.png";
 import Paypal from "../../assets/img/paypal.png";
-import Instagram from "../../assets/img/inst.png";
-import Facebook from "../../assets/img/fecebook.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
@@ -27,14 +26,20 @@ const Footer = () => {
                         <div className="footer_subblog">
                             <div className="footer_title">Помощь</div>
 
-                            <li>Доставка</li>
-                            <li>Возврат</li>
-                            <li>Связаться с нами</li>
+                            <li>
+                                <Link to="/dostavka">Доставка</Link>
+                            </li>
+                            {/* <li>Возврат</li> */}
+                            <li>
+                                <Link to="/contacts">Связаться с нами</Link>
+                            </li>
                         </div>
                         <div className="footer_subblog">
                             <div className="footer_title">Для клиентов</div>
 
-                            <li>Как совершить покупку</li>
+                            <li>
+                                <Link to="/size">Какой размер выбрать?</Link>
+                            </li>
                             <li>Условия пользования</li>
                         </div>
 
@@ -42,8 +47,12 @@ const Footer = () => {
                             <div className="footer_title_street">
                                 StreetHead
                             </div>
-                            <li>О нас</li>
-                            <li>Вакансии</li>
+                            <li>
+                                <Link to="/about">О нас</Link>
+                            </li>
+                            <li>
+                                <Link to="vak">Вакансии</Link>
+                            </li>
                             {/* <div className="social_net">
                                 <img className="icon" src={Instagram} />
                                 <img className="icon" src={Facebook} />

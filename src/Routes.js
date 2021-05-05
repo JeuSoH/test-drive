@@ -18,6 +18,11 @@ import OrderForm from "./components/OrderForm/OrderForm";
 import Footer from "./components/Footer/Footer";
 import FootballShoes from "./components/FootbalShoes/FootballShoes";
 import ShoesNew from "./components/ShoesNew/ShoesNew";
+import AboutUs from "./components/AboutUs/AboutUs";
+import Vakans from "./components/Vakans/Vakans";
+import Dostavka from "./components/Dostavka/Dostavka";
+import Contacts from "./components/Contacts/Contacts";
+import Size from "./components/Size/Size";
 
 const Routes = () => {
     return (
@@ -61,6 +66,19 @@ const Routes = () => {
                                 component={FootballShoes}
                             />
                             <Route exact path="/new" component={ShoesNew} />
+                            <Route exact path="/about" component={AboutUs} />
+                            <Route exact path="/vak" component={Vakans} />
+                            <Route
+                                exact
+                                path="/dostavka"
+                                component={Dostavka}
+                            />
+                            <Route
+                                exact
+                                path="/contacts"
+                                component={Contacts}
+                            />
+                            <Route exact path="/size" component={Size} />
                             <Redirect to="/" />
                         </Switch>
                         <Footer />

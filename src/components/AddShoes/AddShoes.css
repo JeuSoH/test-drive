@@ -35,3 +35,29 @@
 .add_block {
     margin-bottom: 25px;
 }
+@media all and (max-width: 768px) {
+    .inputs {
+        width: 158%;
+    }
+}
+@media all and (max-width: 540px) {
+    .inputs {
+        width: 224%;
+    }
+}
+@media all and (max-width: 414px) {
+    .inputs {
+        width: 300%;
+    }
+}
+
+@media all and (max-width: 360px) {
+    .inputs {
+        width: 335%;
+    }
+}
+@media all and (max-width: 280px) {
+    .inputs {
+        width: 430%;
+    }
+}

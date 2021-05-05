@@ -5,7 +5,7 @@
 }
 .card_img {
     width: 350px;
-    height: 350px;
+    height: 300px;
     background: linear-gradient(
         180deg,
         #877373 0%,
@@ -17,21 +17,24 @@
     margin-top: 50px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     margin-right: 50px;
-    margin-bottom: 120px;
+    /* margin-bottom: 120px; */
     width: 350px;
+    height: 450px;
 }
 .foot_img {
-    width: 350px;
-    /* height: 230px; */
+    width: 250px;
+    height: 250px;
     /* margin-top: 50px; */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    margin-left: 50px;
 }
 .card_desc_brand {
     display: flex;
-    width: 350px;
-    justify-content: space-between;
+    /* width: 350px; */
+    /* margin-top: 50px; */
+    height: 75px;
 }
 .card_brand {
     margin-right: 10px;
@@ -42,8 +45,8 @@
     margin-top: 0;
 }
 .icon_card {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     margin-top: 0;
     padding: 5px;
     border-radius: 5px;
@@ -53,6 +56,8 @@
     font-weight: bolder;
     color: #b93935;
     display: flex;
+    justify-content: space-around;
+    margin-top: 60px;
 }
 .block_pr {
     margin-top: 0;

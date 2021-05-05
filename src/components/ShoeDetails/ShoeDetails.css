@@ -150,3 +150,28 @@
 .review {
     margin-bottom: 150px;
 }
+@media all and (max-width: 768px) {
+    .details_card {
+        width: 157%;
+    }
+}
+@media all and (max-width: 414px) {
+    .details_card {
+        width: 300%;
+    }
+}
+@media all and (max-width: 411px) {
+    .details_card {
+        width: 295%;
+    }
+}
+@media all and (max-width: 360px) {
+    .details_card {
+        width: 335%;
+    }
+}
+@media all and (max-width: 280px) {
+    .details_card {
+        width: 430%;
+    }
+}
