@@ -18,15 +18,17 @@
     height: 520px;
 }
 .admission_cleats {
-    background-image: url(../../assets/img/cleats.png);
+    background-image: url(../../assets/img/zz.jpg);
     width: 566px;
     height: 520px;
+    background-size: cover;
+    background-position: center;
 }
 .admission_blog span {
     bottom: 200px;
     font-size: 24px;
     padding-left: 30px;
-    font-weight: 500;
+    font-weight: bold;
     padding-bottom: 60px;
 }
 .admission_left {
@@ -40,7 +42,7 @@
     height: 0px;
 }
 .admission_right_type {
-    color: #fff;
+    color: #000;
     height: 0px;
 }
 .btn_ftr {
@@ -66,5 +68,9 @@
     margin-left: 30px;
     width: 174px;
     height: 42px;
-    background: #fff;
+    background: #672020;
+}
+.admission a {
+    color: #fff;
+    font-size: 24px;
 }

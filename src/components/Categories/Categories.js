@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import React from "react";
 import "./Categories.css";
 
@@ -6,7 +7,7 @@ const Categories = () => {
         <>
             <div class="admission">
                 <div class="container">
-                    <div class="admission_logo">Новые поступление</div>
+                    <div class="admission_logo">Новые поступления</div>
                     <div class="admission_blog">
                         <div class="admission_future">
                             <div class="admission_left">
@@ -14,16 +15,21 @@ const Categories = () => {
                                     Обувь будущего
                                 </span>
                                 <br />
-                                <button class="btn_ftr">Купить</button>
+                                <button class="btn_ftr">
+                                    <Link to="/new"> Купить</Link>{" "}
+                                </button>
                             </div>
                         </div>
                         <div class="admission_cleats">
                             <div class="admission_right">
                                 <span class="admission_right_type">
-                                    Футбольные бутсы
+                                    Спортивная обвуь
                                 </span>
                                 <br />
-                                <button class="btn_cts">Купить</button>
+                                <button class="btn_cts">
+                                    {" "}
+                                    <Link to="/football">Купить</Link>
+                                </button>
                             </div>
                         </div>
                     </div>

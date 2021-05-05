@@ -13,18 +13,18 @@ const AddShoes = () => {
         size: "",
         color: "",
         price: "",
-        images: []
+        images: [],
     });
 
     const { postNewShoe } = useContext(shoesContext);
 
     const handleValue = (e) => {
         console.log(e);
-        let newShoe = { ...shoe}
-        if(e.target.name === 'images'){
-           newShoe.images.push(e.target.value)
-        }else{
-            newShoe[e.target.name] = e.target.value
+        let newShoe = { ...shoe };
+        if (e.target.name === "images") {
+            newShoe.images.push(e.target.value);
+        } else {
+            newShoe[e.target.name] = e.target.value;
         }
         setShoe(newShoe);
     };
@@ -40,7 +40,7 @@ const AddShoes = () => {
             size: "",
             color: "",
             price: "",
-            images: []
+            images: [],
         });
         if (
             shoe.brand === "" ||
@@ -127,6 +127,13 @@ const AddShoes = () => {
                         value="Jordan"
                         onChange={handleValue}
                     />
+                    <label className="label_add">Air Max</label>
+                    <input
+                        type="radio"
+                        name="category"
+                        value="Air Max"
+                        onChange={handleValue}
+                    />
                 </div>
                 <div className="add_block">
                     <label>4)Sex:</label>
@@ -170,6 +177,27 @@ const AddShoes = () => {
                         type="checkbox"
                         name="size"
                         value="39"
+                        onChange={handleValue}
+                    />
+                    <label className="label_add">40</label>
+                    <input
+                        type="checkbox"
+                        name="size"
+                        value="40"
+                        onChange={handleValue}
+                    />
+                    <label className="label_add">41</label>
+                    <input
+                        type="checkbox"
+                        name="size"
+                        value="41"
+                        onChange={handleValue}
+                    />
+                    <label className="label_add">42</label>
+                    <input
+                        type="checkbox"
+                        name="size"
+                        value="42"
                         onChange={handleValue}
                     />
                 </div>
