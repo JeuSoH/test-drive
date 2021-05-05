@@ -3,7 +3,7 @@ import Cards from "react-credit-cards";
 import "react-credit-cards/es/styles-compiled.css";
 import { shoesContext } from "../../contexts/shoesContext";
 import { authContext } from "../../contexts/AuthContext";
-import "./Card.css";
+import "./card.css";
 import { usersContext } from "../../contexts/UsersContext";
 import { useHistory } from "react-router";
 
@@ -18,11 +18,11 @@ const Card = () => {
     }, []);
 
     console.log(currentUser);
-    const [number, setNumber] = useState('')
-    const [name, setName] = useState('')
-    const [expiry, setExpiry] = useState('')
-    const [cvc, setCvc] = useState('')
-    const [focus, setFocus] = useState('')
+    const [number, setNumber] = useState("");
+    const [name, setName] = useState("");
+    const [expiry, setExpiry] = useState("");
+    const [cvc, setCvc] = useState("");
+    const [focus, setFocus] = useState("");
 
     function handleBuyBtn(event, sum) {
         event.preventDefault();
@@ -79,7 +79,14 @@ const Card = () => {
                         onChange={(e) => setCvc(e.target.value)}
                         onFocus={(e) => setFocus(e.target.name)}
                     />
-                    <button onClick={(event) => handleBuyBtn(event, cart.totalPrice)} className="card__btn">Оплатить</button>
+                    <button
+                        onClick={(event) =>
+                            handleBuyBtn(event, cart.totalPrice)
+                        }
+                        className="card__btn"
+                    >
+                        Оплатить
+                    </button>
                 </form>
             </div>
         </div>

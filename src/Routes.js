@@ -16,6 +16,8 @@ import AdminPanel from "./components/AdminPanel/AdminPanel";
 import EditShoe from "./components/EditShoe/EditShoe";
 import OrderForm from "./components/OrderForm/OrderForm";
 import Footer from "./components/Footer/Footer";
+import FootballShoes from "./components/FootbalShoes/FootballShoes";
+import ShoesNew from "./components/ShoesNew/ShoesNew";
 
 const Routes = () => {
     return (
@@ -53,6 +55,12 @@ const Routes = () => {
                                 path="/edit/:id"
                                 component={EditShoe}
                             />
+                            <Route
+                                exact
+                                path="/football"
+                                component={FootballShoes}
+                            />
+                            <Route exact path="/new" component={ShoesNew} />
                             <Redirect to="/" />
                         </Switch>
                         <Footer />
