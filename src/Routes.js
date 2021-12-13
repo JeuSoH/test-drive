@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import AddShoes from "./components/AddShoes/AddShoes";
 import Header from "./components/Header/Header";
-import Card from "./components/Card/card";
+
 import Home from "./components/Home/Home";
 import SignIn from "./components/SignIn/SignIn";
 import SignUp from "./components/SignUp/SignUp";
@@ -23,6 +23,7 @@ import Vakans from "./components/Vakans/Vakans";
 import Dostavka from "./components/Dostavka/Dostavka";
 import Contacts from "./components/Contacts/Contacts";
 import Size from "./components/Size/Size";
+import { Card } from "@material-ui/core";
 
 const Routes = () => {
     return (
